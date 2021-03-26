@@ -1,0 +1,135 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="BhRMx}!o|RQaK_EYV)D|">mass</variable>
+    <variable type="" id="9qCtHTzl5EL2mvZ^Xm?c">width</variable>
+    <variable type="" id="ziUx8|0Bg@:8}I[nW2T`">height</variable>
+    <variable type="" id="uZ9vrL,oY,3$Ez%}d:I5">length</variable>
+  </variables>
+  <block type="variables_set" id="7N3oDj^_{UGqz(zi.QN," x="172" y="46">
+    <field name="VAR" id="ziUx8|0Bg@:8}I[nW2T`" variabletype="">height</field>
+    <value name="VALUE">
+      <block type="declare_real" id="!*`!jsAN)6mmm2:v|p9U">
+        <value name="REAL_INPUT">
+          <block type="text_prompt_ext" id="FE9AKhD4p=LwOrZRm^Kf">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <block type="text" id="shcKF[:(AW;degIQM^{p">
+                <field name="TEXT">Enter the height: </field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="~y8/qdpY?:OZr*lQR1=x">
+        <field name="VAR" id="uZ9vrL,oY,3$Ez%}d:I5" variabletype="">length</field>
+        <value name="VALUE">
+          <block type="declare_real" id="^e%i#F^C0i.HBB}{wNem">
+            <value name="REAL_INPUT">
+              <block type="text_prompt_ext" id="oR]RjD%A{j?zM0z?/lZh">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <block type="text" id="/O64erBJU@{ZFVw-i;.o">
+                    <field name="TEXT">Enter the length: </field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="]Pp6^%95@nJbX/VQi.;~">
+            <field name="VAR" id="9qCtHTzl5EL2mvZ^Xm?c" variabletype="">width</field>
+            <value name="VALUE">
+              <block type="declare_real" id="Gi%9/prNR?q!udCYI7l$">
+                <value name="REAL_INPUT">
+                  <block type="text_prompt_ext" id="pK/k4+[%t@t{)0_f/y4V">
+                    <mutation type="NUMBER"></mutation>
+                    <field name="TYPE">NUMBER</field>
+                    <value name="TEXT">
+                      <block type="text" id="61Vb,rvfiUuW@/P~2YyL">
+                        <field name="TEXT">Enter the width: </field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="[]!xL}Oyyoih/z5@!$b3">
+                <field name="VAR" id="BhRMx}!o|RQaK_EYV)D|" variabletype="">mass</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="b?6bfsU^3Q$GpwsC!TWf">
+                    <field name="OP">DIVIDE</field>
+                    <value name="A">
+                      <block type="math_arithmetic" id="8_d+%@Yp7N,U963p7v}J">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="math_number" id="!+iv#Pjhqgv{:03Sk$GM">
+                            <field name="NUM">19</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_arithmetic" id="Y3qNgc|}~8IAHfpW.@gz">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <block type="variables_get" id="!lWz#MN2MLiYd:_n{ZaN">
+                                <field name="VAR" id="9qCtHTzl5EL2mvZ^Xm?c" variabletype="">width</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_arithmetic" id="E-Q2Sbu`j0/y4J]#LzkU">
+                                <field name="OP">POWER</field>
+                                <value name="A">
+                                  <block type="variables_get" id=")V~|-pKPCcJ}9/SR{Abx">
+                                    <field name="VAR" id="ziUx8|0Bg@:8}I[nW2T`" variabletype="">height</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="T[A_cFc%Kep?j+om(9!t">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="6k-((?Z@BJ?hk[cY6@ia">
+                        <field name="VAR" id="uZ9vrL,oY,3$Ez%}d:I5" variabletype="">length</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="text_print" id="rdf2wn}{9-:m;h)4m|z(">
+                    <value name="TEXT">
+                      <block type="text_join" id="rSZsWTZ-60-yT8cC6Z*C">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="Ro%wN%_K]a6Z/qs=tE/0">
+                            <field name="TEXT">Maximum weight is: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="variables_get" id="Y;5rA*e9UtDFgIWx`~m,">
+                            <field name="VAR" id="BhRMx}!o|RQaK_EYV)D|" variabletype="">mass</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

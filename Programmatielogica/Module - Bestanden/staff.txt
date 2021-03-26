@@ -1,0 +1,6 @@
+1;Jan Jansen;Bosweg 40;3000;Leuven;2775
+7;Linda Ceulemans;Dorpstraat 99;9000;Gent;3025
+3;Katrien Mertens;Kapeldreef 1;1000;Brussel;3775
+12;Joris Vercammen;Kaai 17;8400;Oostende;2825
+8;An Sleegers;Dennenbos 15;3500;Hasselt;3525
+15;Piet Peeters;Karrenstraat 50;2000;Antwerpen;3275

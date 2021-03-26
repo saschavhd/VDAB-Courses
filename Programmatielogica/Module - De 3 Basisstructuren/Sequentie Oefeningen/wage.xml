@@ -1,0 +1,129 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="OXWxdbm85T|2kJ)Nd,pR">normalWorkTime</variable>
+    <variable type="" id="=9@Pc4~;|WTM}4h2+-L2">overTime</variable>
+    <variable type="" id="G!J;Wo}o]3dAquGvdC%g">hourlyPay</variable>
+    <variable type="" id="hkR5}fI;,NraK{TNp2*g">effectivePay</variable>
+  </variables>
+  <block type="variables_set" id="=AF2,qBVXs6q1]oX[v:S" x="28" y="47">
+    <field name="VAR" id="OXWxdbm85T|2kJ)Nd,pR" variabletype="">normalWorkTime</field>
+    <value name="VALUE">
+      <block type="declare_integer" id="4WbwPkY.%jgD^3LMj%^h">
+        <value name="INTEGER_INPUT">
+          <block type="text_prompt_ext" id="ID!i4dwFHkP0exR(lv!_">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <block type="text" id="z63`:$i1gJrn[{DmR@iD">
+                <field name="TEXT">Enter normal work hours: </field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="gJ-3rx{hDIK8(STjP3y~">
+        <field name="VAR" id="=9@Pc4~;|WTM}4h2+-L2" variabletype="">overTime</field>
+        <value name="VALUE">
+          <block type="declare_integer" id="aV2Q$Eh:gAV.tyqSs00.">
+            <value name="INTEGER_INPUT">
+              <block type="text_prompt_ext" id="?|CVKd_2:cjEz-Wu*StM">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <block type="text" id="L3wn$r@qk^:Cd}kRTzUV">
+                    <field name="TEXT">Enter amount of over time hours: </field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="@chTJn*/BQMtD#i^o[$5">
+            <field name="VAR" id="G!J;Wo}o]3dAquGvdC%g" variabletype="">hourlyPay</field>
+            <value name="VALUE">
+              <block type="declare_real" id="H7a6H~BnLVwd8,S#ErB+">
+                <value name="REAL_INPUT">
+                  <block type="text_prompt_ext" id="16p+fkFK48~ijno7ft,5">
+                    <mutation type="NUMBER"></mutation>
+                    <field name="TYPE">NUMBER</field>
+                    <value name="TEXT">
+                      <block type="text" id="d5+@)M~}aFyT;h#]t;By">
+                        <field name="TEXT">Enter your hourly pay: </field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="b@`}WhV^I3/rWeIo:`B2">
+                <field name="VAR" id="hkR5}fI;,NraK{TNp2*g" variabletype="">effectivePay</field>
+                <value name="VALUE">
+                  <block type="declare_real" id="WD2=iZr7+e`d]6pTzTd=">
+                    <value name="REAL_INPUT">
+                      <block type="math_arithmetic" id="EZTvY1)bh:Z2`c4A%jZ,">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <block type="math_arithmetic" id="9AE9lv{!uqpQoL!Bs8|E">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <block type="variables_get" id="?QO|n[hlT{X=ug}H-395">
+                                <field name="VAR" id="OXWxdbm85T|2kJ)Nd,pR" variabletype="">normalWorkTime</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="p{c}C)4ISzzMBt=JM:})">
+                                <field name="VAR" id="G!J;Wo}o]3dAquGvdC%g" variabletype="">hourlyPay</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_arithmetic" id="@S9rAT!vFrev,0V,UV@T">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <block type="variables_get" id="jGDeeEkpiSzr5s~CIl`D">
+                                <field name="VAR" id="=9@Pc4~;|WTM}4h2+-L2" variabletype="">overTime</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_arithmetic" id="]2Pb2f5M@^cm)GOHi|{p">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="R69,c_lrA~Jn)lZH$j6P">
+                                    <field name="VAR" id="G!J;Wo}o]3dAquGvdC%g" variabletype="">hourlyPay</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="#l}q_LzDV`RZZlH.|cVy">
+                                    <field name="NUM">1.5</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="text_print" id="RT|q$WZe%u/;^5L[,jC#">
+                    <value name="TEXT">
+                      <block type="variables_get" id="y=!:g(nFi_gMXJbbNy7.">
+                        <field name="VAR" id="hkR5}fI;,NraK{TNp2*g" variabletype="">effectivePay</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

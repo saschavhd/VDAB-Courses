@@ -1,0 +1,252 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="1)+ko3pQP~-J}/w?#6[t">beginHour</variable>
+    <variable type="" id="9V/DwMrdQe,EBSAeGDW:">beginMinute</variable>
+    <variable type="" id="+^o^[{{v+k)**UMaNl-Y">hoursTaken</variable>
+    <variable type="" id="Tb2XTO5)}oQMR5KU|Zyr">minutesTaken</variable>
+    <variable type="" id="%9j.9pxaJEZNRg~I;$Z{">endHour</variable>
+    <variable type="" id="qD+n*]@!(tqJ|g4Q/=O^">endMinute</variable>
+  </variables>
+  <block type="variables_set" id="yA1l{Kzg{H@C3h[O4}gT" x="323" y="74">
+    <field name="VAR" id="1)+ko3pQP~-J}/w?#6[t" variabletype="">beginHour</field>
+    <value name="VALUE">
+      <block type="declare_integer" id="[dJnu+{Uu,v!6{avggfz">
+        <value name="INTEGER_INPUT">
+          <block type="text_prompt_ext" id="`6l!OGc}*PrLYB3Rk|l)">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <block type="text" id="E=h`7ZJ95V52ZazGuyro">
+                <field name="TEXT">Enter begin hour: </field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="Tr^6Bug,Ne5qHrW]UOvR">
+        <field name="VAR" id="9V/DwMrdQe,EBSAeGDW:" variabletype="">beginMinute</field>
+        <value name="VALUE">
+          <block type="declare_integer" id="!0{GUW,?s!^)!Fp?gS[i">
+            <value name="INTEGER_INPUT">
+              <block type="text_prompt_ext" id="83xc8dv`Pp%G0!ckhAZQ">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <block type="text" id="Ut8L_Pkr7(Bt;aZ%Yc7d">
+                    <field name="TEXT">Enter begin minute:</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="1ewk?S/jEg-P_SC{XsnS">
+            <field name="VAR" id="+^o^[{{v+k)**UMaNl-Y" variabletype="">hoursTaken</field>
+            <value name="VALUE">
+              <block type="declare_integer" id="o?1s}k.4SYV-%U?h`JPV">
+                <value name="INTEGER_INPUT">
+                  <block type="text_prompt_ext" id="/`4Z$x!CQh{eqKK+beLU">
+                    <mutation type="NUMBER"></mutation>
+                    <field name="TYPE">NUMBER</field>
+                    <value name="TEXT">
+                      <block type="text" id="bUH6=h-+#}H7V$%Q+j.|">
+                        <field name="TEXT">Enter hours taken: </field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="EAa:sX[R.d/Q`-pEw|Ks">
+                <field name="VAR" id="Tb2XTO5)}oQMR5KU|Zyr" variabletype="">minutesTaken</field>
+                <value name="VALUE">
+                  <block type="declare_integer" id="WSgZIsJB77(|lw/4gW4~">
+                    <value name="INTEGER_INPUT">
+                      <block type="text_prompt_ext" id="n%inOx:p)CTw?.A1OxeP">
+                        <mutation type="NUMBER"></mutation>
+                        <field name="TYPE">NUMBER</field>
+                        <value name="TEXT">
+                          <block type="text" id="{)n?mSv]pgI`/iH]9jd_">
+                            <field name="TEXT">Enter minutes taken: </field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="B4S]ZD#%7.,`PtA|AlN-">
+                    <field name="VAR" id="%9j.9pxaJEZNRg~I;$Z{" variabletype="">endHour</field>
+                    <value name="VALUE">
+                      <block type="declare_integer" id="]TJxUp#O2rCIk$-JJMK_">
+                        <value name="INTEGER_INPUT">
+                          <block type="math_arithmetic" id="L,+Rch(sGLay+wVsU*oL">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="variables_get" id="QMBU!ZX;dL$akyMzfaOA">
+                                <field name="VAR" id="1)+ko3pQP~-J}/w?#6[t" variabletype="">beginHour</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="I|d_Y4+IucmX-_9[%P3X">
+                                <field name="VAR" id="+^o^[{{v+k)**UMaNl-Y" variabletype="">hoursTaken</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="caRgL!xfN`U:7uR0!n/0">
+                        <field name="VAR" id="qD+n*]@!(tqJ|g4Q/=O^" variabletype="">endMinute</field>
+                        <value name="VALUE">
+                          <block type="declare_integer" id="#C)|J~ahH1w+`x$rFm9]">
+                            <value name="INTEGER_INPUT">
+                              <block type="math_arithmetic" id="IbM,*J[3,jxztRO~h%?8">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <block type="variables_get" id="@%p5!=w#cf=RS)-V*Pa-">
+                                    <field name="VAR" id="9V/DwMrdQe,EBSAeGDW:" variabletype="">beginMinute</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="Cr3q/KC#T/EmOacUc~,+">
+                                    <field name="VAR" id="Tb2XTO5)}oQMR5KU|Zyr" variabletype="">minutesTaken</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="a/b7[niLM05v{AR,p^|)">
+                            <field name="VAR" id="%9j.9pxaJEZNRg~I;$Z{" variabletype="">endHour</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="22kl(u30x_$;x|0CKtbw">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <block type="variables_get" id="E)*SG8z{SG2^mTM8#;G!">
+                                    <field name="VAR" id="%9j.9pxaJEZNRg~I;$Z{" variabletype="">endHour</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_modulo" id="yg,gZ4O;!WZ#w)+lC{hl">
+                                    <value name="DIVIDEND">
+                                      <block type="variables_get" id="-v/CSH_DJwRMwnb67E?/">
+                                        <field name="VAR" id="qD+n*]@!(tqJ|g4Q/=O^" variabletype="">endMinute</field>
+                                      </block>
+                                    </value>
+                                    <value name="DIVISOR">
+                                      <block type="math_number" id="drStw)K@lv`s}~UHz8W*">
+                                        <field name="NUM">60</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="3RzC:[GqdOh-;%B16]Wh">
+                                <field name="VAR" id="qD+n*]@!(tqJ|g4Q/=O^" variabletype="">endMinute</field>
+                                <value name="VALUE">
+                                  <block type="math_modulo" id=")iN[b,jf}3fDdnvQ+B2Y">
+                                    <value name="DIVIDEND">
+                                      <block type="variables_get" id="5]+a;KdAS?S7;!AdQS(i">
+                                        <field name="VAR" id="qD+n*]@!(tqJ|g4Q/=O^" variabletype="">endMinute</field>
+                                      </block>
+                                    </value>
+                                    <value name="DIVISOR">
+                                      <block type="math_number" id="Y~E0ifbOLq5G1=ph+GfM">
+                                        <field name="NUM">60</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="controls_if" id="Do4TTxeS2;rx,BDnVnI|">
+                                    <mutation else="1"></mutation>
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="`/r}j@qkjGizOx7+yD;=">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="8WS8R5mgt-!0(=|NCID?">
+                                            <field name="VAR" id="qD+n*]@!(tqJ|g4Q/=O^" variabletype="">endMinute</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="{,6IHbS/ZQv1MKQnimHW">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="text_print" id="M@gd2a*DS28_G?ahoo3u">
+                                        <value name="TEXT">
+                                          <block type="text_join" id="={B@gKFg96D}#?hcLs)a">
+                                            <mutation items="3"></mutation>
+                                            <value name="ADD0">
+                                              <block type="variables_get" id="BOrUw]k=:+FI5~GsK^^A">
+                                                <field name="VAR" id="%9j.9pxaJEZNRg~I;$Z{" variabletype="">endHour</field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="text" id="lmD36g%10;H@S7kX{w$,">
+                                                <field name="TEXT">:</field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD2">
+                                              <block type="text" id="jf1`7Kmtk#p,qo`}m2rC">
+                                                <field name="TEXT">00</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <statement name="ELSE">
+                                      <block type="text_print" id="yHU-j!~[=F]Y6(H)Ah_+">
+                                        <value name="TEXT">
+                                          <block type="text_join" id=".b.Y}94k@qWXO]OE(Fv2">
+                                            <mutation items="3"></mutation>
+                                            <value name="ADD0">
+                                              <block type="variables_get" id="z5XWxY$w`vX1QPH;t5TZ">
+                                                <field name="VAR" id="%9j.9pxaJEZNRg~I;$Z{" variabletype="">endHour</field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="text" id=".x-a4L:UT/1VyuYiLY3S">
+                                                <field name="TEXT">:</field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD2">
+                                              <block type="variables_get" id="M^R#2*/RxiEvOW5GcF5@">
+                                                <field name="VAR" id="qD+n*]@!(tqJ|g4Q/=O^" variabletype="">endMinute</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

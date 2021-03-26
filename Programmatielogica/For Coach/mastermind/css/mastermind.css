@@ -1,0 +1,33 @@
+body {
+    padding: 25px;
+    width: 33%;
+}
+
+#result1, #result2, #result3, #result4, #prev1, #prev2, #prev3, #prev4 {
+    display: inline-block;
+    border: solid;
+    border-width: thin;
+    height: 36px;
+    width: 36px;
+    margin: 2.5px;
+}
+
+#result, #prev, #counter {
+    display: inline-block;
+}
+
+#box1, #box2, #box3, #box4 {
+    background-color: white;
+    height: 36px;
+    width: 36px;
+    margin: 3.5px;
+}
+
+#validateButton, #resetButton {
+    height: 18px;
+    width: 72px;
+}
+
+#resultContainer, #previousInputContainer {
+    padding-bottom: 10px;
+}

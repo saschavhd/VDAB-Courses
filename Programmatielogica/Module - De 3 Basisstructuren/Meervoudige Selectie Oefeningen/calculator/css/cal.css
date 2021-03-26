@@ -1,0 +1,33 @@
+body {
+    width: 33%
+}
+
+#res {
+    background-color: lightgrey;
+    border: solid;
+    height: 48px;
+    font-size: 20px;
+}
+
+#btn0, #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9 {
+    background-color: lightgreen;
+    color: brown;
+}
+
+#btnClr, #btnEql {
+    background-color: darkgreen;
+    color: white;
+}
+
+#btnSum, #btnSub, #btnMul, #btnDiv {
+    background-color: black;
+    color: red;
+}
+
+#btn0, #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btnClr, #btnEql, #btnSum, #btnSub, #btnMul, #btnDiv {
+    width: 25%;
+    height: 36px;
+    font-size: 18px;
+    margin: 0px;
+    float: left;
+}

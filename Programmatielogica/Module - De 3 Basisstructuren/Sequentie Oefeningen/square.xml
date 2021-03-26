@@ -1,0 +1,72 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="sJU?iLSS3!Wb,,Jy8.fE">num</variable>
+    <variable type="" id=")7_iuSB{%ZSj0jUp;@S{">square</variable>
+    <variable type="" id="!UXDKzp[1%/ICd9mmHdw">power</variable>
+  </variables>
+  <block type="variables_set" id="toQyigQgdex)Ib;Yh#L|" x="37" y="45">
+    <field name="VAR" id="!UXDKzp[1%/ICd9mmHdw" variabletype="">power</field>
+    <value name="VALUE">
+      <block type="declare_integer" id="dlB@O/7m,}M],zzVsjEN">
+        <value name="INTEGER_INPUT">
+          <block type="math_number" id="O*,)*F{qO^PyUC7KuT`/">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="#w5U/)AC3=6P2^GDqz+^">
+        <field name="VAR" id="sJU?iLSS3!Wb,,Jy8.fE" variabletype="">num</field>
+        <value name="VALUE">
+          <block type="declare_integer" id="m/F0;f*JXd|Ble%sI([y">
+            <value name="INTEGER_INPUT">
+              <block type="text_prompt_ext" id="fDQ#oaBM9mSps-p@Mff[">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <block type="text" id="yg+5B1(Am}4l)PSQjmWh">
+                    <field name="TEXT">Enter the number you want to square: </field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="m$R.WH7*nTu%nPQ=XexF">
+            <field name="VAR" id=")7_iuSB{%ZSj0jUp;@S{" variabletype="">square</field>
+            <value name="VALUE">
+              <block type="declare_integer" id="z-;DZqm{0WJ.Y?j^|A6z">
+                <value name="INTEGER_INPUT">
+                  <block type="math_arithmetic" id="s{s7ASUo-q98YC~ZfsI^">
+                    <field name="OP">POWER</field>
+                    <value name="A">
+                      <block type="variables_get" id=".M4?7_(NI@_oW~%`^`|L">
+                        <field name="VAR" id="sJU?iLSS3!Wb,,Jy8.fE" variabletype="">num</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="+q{(1BSKeBjH?RI54kt}">
+                        <field name="VAR" id="!UXDKzp[1%/ICd9mmHdw" variabletype="">power</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="text_print" id="ufyV*aAq$KLzrD_*b#PU">
+                <value name="TEXT">
+                  <block type="variables_get" id="O!|qHWxdBwe2ZKL`ORT^">
+                    <field name="VAR" id=")7_iuSB{%ZSj0jUp;@S{" variabletype="">square</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

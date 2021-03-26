@@ -1,0 +1,49 @@
+*** Opdracht 1: Probleem oplossen
+
+- Maandloon berekenen
+- Jaarlijkse loonstaat berekenen
+
+Dit zijn beide problemen die heel simpel zijn om op te lossen. Het enige wat hier echt voor nodig is zijn wiskundige berekeningen maken en deze op de juiste plaats zetten.
+Een lijst opstellen van werknemers die in aanmerking komen voor een Sinterklaasgeschenk is iets wat niet echt door een computer gedaan kan worden enkel als er de vereisten voor het geschenk uit specifieke data komen.
+Klachten van klanten daadwerkelijk opvolgen is iets wat nog niet door computers gedaan kan worden (met uitzondering van heel algemene klachten), in de toekomst met artificiële intelligetie misschien wel.
+De dagelijkse gepresteerde uren van een werknemer registreren is zeker ook een mogelijkheid, maar om dit volledig te automatiseren zou er een systeem moeten komen (hardware bijvoorbeeld met kaart of software bijvoorbeeld met app) om in en uit te klokken. Dit is iets wat meer werk, tijd en geld zal kosten en zou ik daarom dus iets later prioritiseren.
+
+*** Opdracht 2: Variabelen
+
+monthDayFactor = Integer -> 25
+monthlyWage = Integer/Float -> input()
+dailyWage = Float -> monthlyWage/monthDayFactor
+daysWorked = Integer -> input()
+
+salaryOverTime = Float (2 decimals) -> round(dailyWage * daysWorked, 2)
+
+print(salaryOverTime)
+
+see wages.py in attachment
+
+*** Opdracht 3: Draagkracht
+
+see draagkracht.xml & carryingcapacity.py in attachment
+
+*** Opdracht 4: Kindergeld
+
+see kindergeld.xml & childSupport.py in attachment
+
+** Opdracht 5: Lidgeld
+
+see lidgeld.xml & memberFee.py in attachment
+
+** Opdracht 6: Rekenmachine
+
+Made html + js calculator in stead of blockly.
+see calculator directory in attachment
+
+** Opdracht 7: Mastermind
+
+Made in html + js in stead of blockly.
+see mastermind directory in attachment
+
+** Opdracht 8: Statistiek
+
+Made in python in stead of blockly.
+see statistics.py in attachment
