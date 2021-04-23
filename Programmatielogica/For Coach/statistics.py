@@ -10,8 +10,8 @@ def createRandomData():
 
 class statArr():
 
-    def __init__(self):
-        self.arr = createRandomData()
+    def __init__(self, arr):
+        self.arr = arr
         self.avg = sum(self.arr)/len(self.arr)
         self.sigma = self.calculateSD()
 
@@ -27,14 +27,16 @@ class statArr():
     def withinOneSD(self):
         temp = []
         for el in self.arr:
-            if self.avg - self.sigma < el < self.avg or self.avg > el > self.avg + self.sigma:
+            print(el)
+            if self.avg - self.sigma <= el <= self.avg + self.sigma:
                 temp.append(el)
         return temp
 
     def withinOneAndTwoSD(self):
         temp = []
         for el in self.arr:
-            if self.avg - self.sigma * 2 < el < self.avg - self.sigma or self.avg + self.sigma < el < self.avg + self.sigma * 2:
+            print(el)
+            if self.avg - self.sigma * 2 <= el < self.avg - self.sigma or self.avg + self.sigma < el <= self.avg + self.sigma * 2:
                 temp.append(el)
         return temp
 
@@ -46,7 +48,7 @@ class statArr():
 
 
 if __name__ == '__main__':
-    test = statArr()
+    test = statArr([5,5,10,10])
     print("Data: {}".format(test.arr))
     print("Average: {}".format(round(test.avg, 2)))
     print("Standard Deviation: {}".format(round(test.sigma, 2)))
