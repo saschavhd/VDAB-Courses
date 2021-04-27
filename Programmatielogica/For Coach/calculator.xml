@@ -1,0 +1,275 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="|E?OM$}p6U;*7R@S0hTH">countingResult</variable>
+    <variable type="" id="i1U2.l=e%;,TcN3ZEe[X">operand</variable>
+    <variable type="" id="G=}c3NFbi/@~ST=$w#C#">operator</variable>
+  </variables>
+  <block type="variables_set" id=".ZNrHh8`h6lc)}|M$Bgd" x="-25" y="17">
+    <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="(d#Xm5#:!D(HMTqk*u1A">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <block type="text" id="Z2+%UvCbLFkI=R:Fiy+q">
+            <field name="TEXT">Enter first number: </field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="lbSm[V+73onA*YA_udBS">
+        <field name="VAR" id="G=}c3NFbi/@~ST=$w#C#" variabletype="">operator</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="Ye|;f[+L6ZjB/Pqs@rnv">
+            <mutation type="TEXT"></mutation>
+            <field name="TYPE">TEXT</field>
+            <value name="TEXT">
+              <block type="text" id="B/5v[y*`Of?}E2{JW0Fw">
+                <field name="TEXT">Enter your operation (+, -, *, /, =)</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_whileUntil" id="*LUI7FLYd*/WoGfke2PE">
+            <field name="MODE">WHILE</field>
+            <value name="BOOL">
+              <block type="logic_compare" id="10)/RZ:}Ed-upGf%6UxN">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="variables_get" id="n7s}R5aY7;qY7?9E2^oR">
+                    <field name="VAR" id="G=}c3NFbi/@~ST=$w#C#" variabletype="">operator</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id=")Y;YcKUxn5K=KWc~bY,_">
+                    <field name="TEXT">=</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="hTe.`DB/N*O[vH7Z@VBm">
+                <field name="VAR" id="i1U2.l=e%;,TcN3ZEe[X" variabletype="">operand</field>
+                <value name="VALUE">
+                  <block type="text_prompt_ext" id="lJf*g%YLTvqBkiGPO|S]">
+                    <mutation type="NUMBER"></mutation>
+                    <field name="TYPE">NUMBER</field>
+                    <value name="TEXT">
+                      <block type="text" id="@1JBiNOmZIuBNZS$yM,N">
+                        <field name="TEXT">Enter operand: </field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="switch_case" id="8]!tLm?9I!D/D8.pD*O,">
+                    <mutation order="0,0,0,0" default="1"></mutation>
+                    <value name="CONDITION">
+                      <block type="variables_get" id="tok!E5UP[cnl(]oU/qu1">
+                        <field name="VAR" id="G=}c3NFbi/@~ST=$w#C#" variabletype="">operator</field>
+                      </block>
+                    </value>
+                    <value name="CASECONDITION0">
+                      <block type="text" id="|e1[QNBU,Y;SU$fG2!Z:">
+                        <field name="TEXT">+</field>
+                      </block>
+                    </value>
+                    <statement name="CASE0">
+                      <block type="variables_set" id=",{)x|{BS]vRUcAz`.4Vt">
+                        <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="JzUP7)cMJ1itys3yt2Wq">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="variables_get" id="6=VOAXb]z67JVTg1}jpX">
+                                <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="lY1e5l%`SX#qD^7XX9X=">
+                                <field name="VAR" id="i1U2.l=e%;,TcN3ZEe[X" variabletype="">operand</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="CASECONDITION1">
+                      <block type="text" id="w8XDu:4dedAshM#ZUIkg">
+                        <field name="TEXT">-</field>
+                      </block>
+                    </value>
+                    <statement name="CASE1">
+                      <block type="variables_set" id="Kr)m?py$6Kr^I)5z.piI">
+                        <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="Yd#8Dmf*rEzFAHZ/8,^|">
+                            <field name="OP">MINUS</field>
+                            <value name="A">
+                              <block type="variables_get" id=")KYb:#fgofnM7R/}}|n$">
+                                <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="XWqKX.4b(mKWG41aoehj">
+                                <field name="VAR" id="i1U2.l=e%;,TcN3ZEe[X" variabletype="">operand</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="CASECONDITION2">
+                      <block type="text" id="Q}O5vVOm3djRf8/~mLW-">
+                        <field name="TEXT">*</field>
+                      </block>
+                    </value>
+                    <statement name="CASE2">
+                      <block type="variables_set" id="gkhkPlLT%FmJFQl-#oV+">
+                        <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="getU:kYBU{ZG^Ib(3_34">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <block type="variables_get" id="4x2F5SS!yrd[/;QvY}B{">
+                                <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="Fi4c:s;CcZ:/#J-)#XP~">
+                                <field name="VAR" id="i1U2.l=e%;,TcN3ZEe[X" variabletype="">operand</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="CASECONDITION3">
+                      <block type="text" id="|$};-9S,JH%?=c!@Omv/">
+                        <field name="TEXT">/</field>
+                      </block>
+                    </value>
+                    <statement name="CASE3">
+                      <block type="controls_if" id="P?T(ppcTarbbrtqJ)@1-">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="~!ZUKCTjpAloYSN#QNba">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="U9i}=b-+xV+pHLe`OcJ=">
+                                <field name="VAR" id="i1U2.l=e%;,TcN3ZEe[X" variabletype="">operand</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="~oR@ha*aFq!lIa/SZ^(%">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="text_print" id="hi*;Fiq:Y28CLc?T?*C3">
+                            <value name="TEXT">
+                              <block type="text" id="fRDD^mRFv=~jq`F+Tuer">
+                                <field name="TEXT">Cannot divide by 0!</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="variables_set" id="#L_C#PT2ZiVrRHr*[@Mf">
+                            <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="ub%ARS$n0(0M_u@:q_ul">
+                                <field name="OP">DIVIDE</field>
+                                <value name="A">
+                                  <block type="variables_get" id="({9(@y+^V,4RUxsZ=H5s">
+                                    <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="?PEs/MssOr]3k-dP/eO7">
+                                    <field name="VAR" id="i1U2.l=e%;,TcN3ZEe[X" variabletype="">operand</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <statement name="ONDEFAULT">
+                      <block type="text_print" id="_XYeZWVem2H/VslijCc`">
+                        <value name="TEXT">
+                          <block type="text" id="Twa1_:bS0w]M5m6qlch|">
+                            <field name="TEXT">You entered an invalid operation! Try again.</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="text_print" id="j-K7`Rr7Hhg^cs1b!n@m">
+                        <value name="TEXT">
+                          <block type="text_join" id="yh@.c*nFfz=1ZRvk7yfX">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="smXF3ED}M5Oo6{ivo_K{">
+                                <field name="TEXT">Current result: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="variables_get" id=".2rFK5F8O)h(*LLb={Hn">
+                                <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="3WM=QDrzErkg;[*5H:J,">
+                            <field name="VAR" id="G=}c3NFbi/@~ST=$w#C#" variabletype="">operator</field>
+                            <value name="VALUE">
+                              <block type="text_prompt_ext" id="rX$AVM=(X4zu*5@/N?JE">
+                                <mutation type="TEXT"></mutation>
+                                <field name="TYPE">TEXT</field>
+                                <value name="TEXT">
+                                  <block type="text" id="dJ2n!NlZ7qnBi)rHWk0[">
+                                    <field name="TEXT">Enter your operation (+, -, *, /, =)</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="text_print" id="mQ*%mwY;d*p1#Nc!NW;y">
+                <value name="TEXT">
+                  <block type="text_join" id="~TT$Gi/?DM=+a9www?`D">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="v9R/4^^z0$|vyKm6B}s6">
+                        <field name="TEXT">End result: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="variables_get" id="U@/z;9-*xL11lL.mAAAd">
+                        <field name="VAR" id="|E?OM$}p6U;*7R@S0hTH" variabletype="">countingResult</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

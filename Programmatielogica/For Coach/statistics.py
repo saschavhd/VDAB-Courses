@@ -15,15 +15,6 @@ class statArr():
         self.avg = sum(self.arr)/len(self.arr)
         self.sigma = self.calculateSD()
 
-    # def getData(self):
-    #     return self.arr
-    #
-    # def getAvg(self):
-    #     return self.avg
-    #
-    # def getStandardDeviation(self):
-    #     return self.sigma
-
     def withinOneSD(self):
         temp = []
         for el in self.arr:

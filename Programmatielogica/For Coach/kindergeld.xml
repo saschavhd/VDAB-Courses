@@ -3,334 +3,437 @@
     <variable type="" id="@,0y:4cE|QP$aI(^XG|]">amountOfKids</variable>
     <variable type="" id="1kB{N!VVl}zzgsRmH8p2">monthlyWage</variable>
     <variable type="" id="q5b]afk4J*44DR;*hWI@">result</variable>
+    <variable type="" id="EnYxO%co2(ZC+?9w#ajr">defaultChildSupport</variable>
+    <variable type="" id="]pxhZ$5#DFx[HRj%XVCM">childSupportThreePlus</variable>
+    <variable type="" id="j4ake1UwYwX-d(BOhxBT">childSupportFivePlus</variable>
   </variables>
-  <block type="variables_set" id="s2G|=gdv.LxIH/Qc68t!" x="89" y="74">
-    <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
+  <block type="variables_set" id="BM?pTR-d.Y`Fw?XR`fny" x="-71" y="4">
+    <field name="VAR" id="]pxhZ$5#DFx[HRj%XVCM" variabletype="">childSupportThreePlus</field>
     <value name="VALUE">
-      <block type="declare_integer" id="_$3pf.ar(la]R$tTw{va">
-        <value name="INTEGER_INPUT">
-          <block type="text_prompt_ext" id="{g1I4V:sed*^gOFQK.-t">
-            <mutation type="NUMBER"></mutation>
-            <field name="TYPE">NUMBER</field>
-            <value name="TEXT">
-              <block type="text" id="oZb*GJ1H~V61)#pSMn^h">
-                <field name="TEXT">Enter the amount of kids the parent has: </field>
-              </block>
-            </value>
-          </block>
-        </value>
+      <block type="math_number" id="v)]NtxOhnV+~myud7[%V">
+        <field name="NUM">12.5</field>
       </block>
     </value>
     <next>
-      <block type="variables_set" id="PByJ;}/M2UB#05HkArQ)">
-        <field name="VAR" id="1kB{N!VVl}zzgsRmH8p2" variabletype="">monthlyWage</field>
+      <block type="variables_set" id="6~+EIC-kx1@yluMH^vg[">
+        <field name="VAR" id="j4ake1UwYwX-d(BOhxBT" variabletype="">childSupportFivePlus</field>
         <value name="VALUE">
-          <block type="declare_real" id="pd9]r==I~fq.d|gI~V.t">
-            <value name="REAL_INPUT">
-              <block type="text_prompt_ext" id="!p_JF]d1~^|u-ht@RvHL">
-                <mutation type="NUMBER"></mutation>
-                <field name="TYPE">NUMBER</field>
-                <value name="TEXT">
-                  <block type="text" id="_`hE:H;b]EjG$e]V$,:]">
-                    <field name="TEXT">Enter the monthly wage the parent has: </field>
-                  </block>
-                </value>
-              </block>
-            </value>
+          <block type="math_number" id="[TPFtI^=ku^MPbjtBBpN">
+            <field name="NUM">7.5</field>
           </block>
         </value>
         <next>
-          <block type="controls_if" id="V?pi;T4t2n#84!G$gKh]">
-            <mutation elseif="1" else="1"></mutation>
-            <value name="IF0">
-              <block type="logic_compare" id="S@(bD!FQ]8/0Jl.:/)K_">
-                <field name="OP">GTE</field>
-                <value name="A">
-                  <block type="variables_get" id="*o8mIX[)|@h(B?m0zy4D">
-                    <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="RJf+Q2WCV}a6eAMN%=7a">
-                    <field name="NUM">5</field>
-                  </block>
-                </value>
+          <block type="variables_set" id="qz^E]3[3!GKm6v%ws`eb">
+            <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
+            <value name="VALUE">
+              <block type="math_number" id="@^znNDJ.wHQjj[bt_a@E">
+                <field name="NUM">30</field>
               </block>
             </value>
-            <statement name="DO0">
-              <block type="variables_set" id="qs=z~0rkThLJKlG.N%t{">
-                <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+            <next>
+              <block type="variables_set" id="s2G|=gdv.LxIH/Qc68t!">
+                <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
                 <value name="VALUE">
-                  <block type="math_arithmetic" id="^~(u4,df44b@6{vuNXMl">
-                    <field name="OP">ADD</field>
-                    <value name="A">
-                      <block type="math_number" id="qZn7i7Im@$x%dZO+2=nn">
-                        <field name="NUM">50</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_arithmetic" id=",jMAB{Rt$.^42!MMAd8%">
-                        <field name="OP">ADD</field>
-                        <value name="A">
-                          <block type="math_number" id="Qn[osVfSL$h}8|1A(A:y">
-                            <field name="NUM">75</field>
+                  <block type="declare_integer" id="_$3pf.ar(la]R$tTw{va">
+                    <value name="INTEGER_INPUT">
+                      <block type="text_prompt_ext" id="{g1I4V:sed*^gOFQK.-t">
+                        <mutation type="NUMBER"></mutation>
+                        <field name="TYPE">NUMBER</field>
+                        <value name="TEXT">
+                          <block type="text" id="oZb*GJ1H~V61)#pSMn^h">
+                            <field name="TEXT">Enter the amount of kids the parent has: </field>
                           </block>
                         </value>
-                        <value name="B">
-                          <block type="math_arithmetic" id="h8t4)vm?qguy?j#O6,UA">
-                            <field name="OP">MULTIPLY</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="PByJ;}/M2UB#05HkArQ)">
+                    <field name="VAR" id="1kB{N!VVl}zzgsRmH8p2" variabletype="">monthlyWage</field>
+                    <value name="VALUE">
+                      <block type="declare_real" id="pd9]r==I~fq.d|gI~V.t">
+                        <value name="REAL_INPUT">
+                          <block type="text_prompt_ext" id="!p_JF]d1~^|u-ht@RvHL">
+                            <mutation type="NUMBER"></mutation>
+                            <field name="TYPE">NUMBER</field>
+                            <value name="TEXT">
+                              <block type="text" id="_`hE:H;b]EjG$e]V$,:]">
+                                <field name="TEXT">Enter the monthly wage the parent has: </field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="V?pi;T4t2n#84!G$gKh]">
+                        <mutation elseif="1" else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="S@(bD!FQ]8/0Jl.:/)K_">
+                            <field name="OP">GTE</field>
                             <value name="A">
-                              <block type="math_arithmetic" id="QXc(:OpMgLjA[cHS|orA">
-                                <field name="OP">MINUS</field>
+                              <block type="variables_get" id="*o8mIX[)|@h(B?m0zy4D">
+                                <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="RJf+Q2WCV}a6eAMN%=7a">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="variables_set" id="qs=z~0rkThLJKlG.N%t{">
+                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="^~(u4,df44b@6{vuNXMl">
+                                <field name="OP">ADD</field>
                                 <value name="A">
-                                  <block type="variables_get" id="O9F?{b/Ly+y6:,U;Ea?e">
+                                  <block type="math_arithmetic" id="6gl.j3uhXl%jp5GycdGw">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="VT!RiKdvAmz+@P4l]q+I">
+                                        <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="qXuuMnFv1R?8U?mM`9m`">
+                                        <field name="NUM">2</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_arithmetic" id=",jMAB{Rt$.^42!MMAd8%">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <block type="math_arithmetic" id="*Dbe2)?E8Djrq670M_0O">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="math_arithmetic" id="dN%Z@Yx7Ar3W4?dF01j0">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="VnJNJLih3gq=^${LK.Uv">
+                                                <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="variables_get" id="+qoXfaT`u(v*@}%O5J1L">
+                                                <field name="VAR" id="]pxhZ$5#DFx[HRj%XVCM" variabletype="">childSupportThreePlus</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id=".tn3jFoZr%8PdE.U]2Hx">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_arithmetic" id="h8t4)vm?qguy?j#O6,UA">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="math_arithmetic" id="QXc(:OpMgLjA[cHS|orA">
+                                            <field name="OP">MINUS</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="O9F?{b/Ly+y6:,U;Ea?e">
+                                                <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="PUQO^RNA-2L%(ESr/p/e">
+                                                <field name="NUM">4</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_arithmetic" id="OZO11Z/B;C=GHZ{Rlh[]">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="bvpsk}R0=xqQFD@RAdv3">
+                                                <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_arithmetic" id="y,Jy!K}v^.-bX*c(_tis">
+                                                <field name="OP">ADD</field>
+                                                <value name="A">
+                                                  <block type="variables_get" id="O}#wss[]bHCdoc=jK0]L">
+                                                    <field name="VAR" id="]pxhZ$5#DFx[HRj%XVCM" variabletype="">childSupportThreePlus</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="variables_get" id="p+zH0*D=Q-~SfRMf3zjs">
+                                                    <field name="VAR" id="j4ake1UwYwX-d(BOhxBT" variabletype="">childSupportFivePlus</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <value name="IF1">
+                          <block type="logic_compare" id="W%1:)=5{a|A7:Jo^rM6P">
+                            <field name="OP">GTE</field>
+                            <value name="A">
+                              <block type="variables_get" id="8O1S}b]R|}:eGU$_U_zD">
+                                <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="KUWvv0P@!l1};.RBSyr2">
+                                <field name="NUM">3</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO1">
+                          <block type="variables_set" id="XREYb@QOI-o2b:Mu$?5u">
+                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="Bwc8hfm9n+}*1:U];i6N">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <block type="math_arithmetic" id="BD^b]sln9Xey4EKE/SK*">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="f~7,BNe0sx6Vo%;2GA})">
+                                        <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="L]$Uvsb8n@As)LI`O@J8">
+                                        <field name="NUM">2</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_arithmetic" id="1D}@Gh)kLe=pylE9r,Cr">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <block type="math_arithmetic" id="75{`_fe1p%y:N+QF`iT(">
+                                        <field name="OP">MINUS</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="jSL(hR9760sA9%IAT!T2">
+                                            <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id=")P4cupH6/EI*3z*gwznk">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_arithmetic" id="BWO*(..7M8=aF+M)jgL%">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="BUB3xoZU8bVP^`MzYsU]">
+                                            <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="variables_get" id="Y!#IxBsL@3SpOO|t=dHm">
+                                            <field name="VAR" id="]pxhZ$5#DFx[HRj%XVCM" variabletype="">childSupportThreePlus</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="variables_set" id="c^W{d?18XI5g22k}xZci">
+                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="-RuqY7gz,7CnkCb$9@sE">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="YDMw0ge1`evkvts4p51L">
                                     <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
                                   </block>
                                 </value>
                                 <value name="B">
-                                  <block type="math_number" id="PUQO^RNA-2L%(ESr/p/e">
-                                    <field name="NUM">4</field>
+                                  <block type="variables_get" id="`+3~aV/YPjDVkOJ~u~x4">
+                                    <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
-                            <value name="B">
-                              <block type="math_number" id="ph=k#+mOOyEOj4c-)geT">
-                                <field name="NUM">45</field>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id=";Q1@id~Cly)?nd#NGg5q">
+                            <mutation elseif="1"></mutation>
+                            <value name="IF0">
+                              <block type="logic_compare" id="b:Bg71q?}pyup3QXv7~@">
+                                <field name="OP">LTE</field>
+                                <value name="A">
+                                  <block type="variables_get" id="lb4;.mm`c#`)0Y8_C~Ay">
+                                    <field name="VAR" id="1kB{N!VVl}zzgsRmH8p2" variabletype="">monthlyWage</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="syw4$w_bai/,k:PvIeB1">
+                                    <field name="NUM">500</field>
+                                  </block>
+                                </value>
                               </block>
                             </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-              </block>
-            </statement>
-            <value name="IF1">
-              <block type="logic_compare" id="W%1:)=5{a|A7:Jo^rM6P">
-                <field name="OP">GTE</field>
-                <value name="A">
-                  <block type="variables_get" id="8O1S}b]R|}:eGU$_U_zD">
-                    <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="KUWvv0P@!l1};.RBSyr2">
-                    <field name="NUM">3</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO1">
-              <block type="variables_set" id="XREYb@QOI-o2b:Mu$?5u">
-                <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
-                <value name="VALUE">
-                  <block type="math_arithmetic" id="Bwc8hfm9n+}*1:U];i6N">
-                    <field name="OP">ADD</field>
-                    <value name="A">
-                      <block type="math_number" id="+S7%t!tFI*pA$[SGvQ`h">
-                        <field name="NUM">50</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_arithmetic" id="1D}@Gh)kLe=pylE9r,Cr">
-                        <field name="OP">MULTIPLY</field>
-                        <value name="A">
-                          <block type="math_arithmetic" id="75{`_fe1p%y:N+QF`iT(">
-                            <field name="OP">MINUS</field>
-                            <value name="A">
-                              <block type="variables_get" id="jSL(hR9760sA9%IAT!T2">
-                                <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id=")P4cupH6/EI*3z*gwznk">
-                                <field name="NUM">2</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_number" id="zH86lC%k=6|/f-zfm[`G">
-                            <field name="NUM">37.5</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-              </block>
-            </statement>
-            <statement name="ELSE">
-              <block type="variables_set" id="c^W{d?18XI5g22k}xZci">
-                <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
-                <value name="VALUE">
-                  <block type="math_arithmetic" id="-RuqY7gz,7CnkCb$9@sE">
-                    <field name="OP">MULTIPLY</field>
-                    <value name="A">
-                      <block type="variables_get" id="YDMw0ge1`evkvts4p51L">
-                        <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="77GSKyoo=;~M:%:,*PIQ">
-                        <field name="NUM">25</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-              </block>
-            </statement>
-            <next>
-              <block type="controls_if" id=";Q1@id~Cly)?nd#NGg5q">
-                <mutation elseif="1"></mutation>
-                <value name="IF0">
-                  <block type="logic_compare" id="b:Bg71q?}pyup3QXv7~@">
-                    <field name="OP">LTE</field>
-                    <value name="A">
-                      <block type="variables_get" id="lb4;.mm`c#`)0Y8_C~Ay">
-                        <field name="VAR" id="1kB{N!VVl}zzgsRmH8p2" variabletype="">monthlyWage</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="syw4$w_bai/,k:PvIeB1">
-                        <field name="NUM">500</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO0">
-                  <block type="variables_set" id="Svw|XH(MPgfGa:!z,$./">
-                    <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
-                    <value name="VALUE">
-                      <block type="math_arithmetic" id="@RzG+MAK@p{h[[9=;`b:">
-                        <field name="OP">ADD</field>
-                        <value name="A">
-                          <block type="variables_get" id="k2c?+9@uEkH23w8h_^|e">
-                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_arithmetic" id="uBnYPNC]12`t[HU]VYH|">
-                            <field name="OP">MULTIPLY</field>
-                            <value name="A">
-                              <block type="variables_get" id="zM-F%D(;x+WYF}}=~Bnk">
+                            <statement name="DO0">
+                              <block type="variables_set" id="Svw|XH(MPgfGa:!z,$./">
                                 <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                                <value name="VALUE">
+                                  <block type="math_arithmetic" id="@RzG+MAK@p{h[[9=;`b:">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="k2c?+9@uEkH23w8h_^|e">
+                                        <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_arithmetic" id="uBnYPNC]12`t[HU]VYH|">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="zM-F%D(;x+WYF}}=~Bnk">
+                                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="0O+$cCMzMWQx3BK8G7?|">
+                                            <field name="NUM">0.25</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <value name="IF1">
+                              <block type="logic_compare" id="SBD%SsyndVMixf]:+)*E">
+                                <field name="OP">GT</field>
+                                <value name="A">
+                                  <block type="variables_get" id="26CtRJV~7W[mZy,ZWCcN">
+                                    <field name="VAR" id="1kB{N!VVl}zzgsRmH8p2" variabletype="">monthlyWage</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="p(GDcOtAH{:HMP95!%^M">
+                                    <field name="NUM">2000</field>
+                                  </block>
+                                </value>
                               </block>
                             </value>
-                            <value name="B">
-                              <block type="math_number" id="0O+$cCMzMWQx3BK8G7?|">
-                                <field name="NUM">0.25</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </statement>
-                <value name="IF1">
-                  <block type="logic_compare" id="SBD%SsyndVMixf]:+)*E">
-                    <field name="OP">GT</field>
-                    <value name="A">
-                      <block type="variables_get" id="26CtRJV~7W[mZy,ZWCcN">
-                        <field name="VAR" id="1kB{N!VVl}zzgsRmH8p2" variabletype="">monthlyWage</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="p(GDcOtAH{:HMP95!%^M">
-                        <field name="NUM">2000</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO1">
-                  <block type="variables_set" id="vN$0b6;=%18k+NzAJk]L">
-                    <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
-                    <value name="VALUE">
-                      <block type="math_arithmetic" id="Q._^}W-gd+/A/$DGU*[d">
-                        <field name="OP">MINUS</field>
-                        <value name="A">
-                          <block type="variables_get" id="4T#XOI5PNA?iKtf2,h3A">
-                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_arithmetic" id="F=RC_b~sl@!kOvU]~W^9">
-                            <field name="OP">MULTIPLY</field>
-                            <value name="A">
-                              <block type="variables_get" id="cvZkqJ7|2fEI2TSjvlGc">
+                            <statement name="DO1">
+                              <block type="variables_set" id="vN$0b6;=%18k+NzAJk]L">
                                 <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                                <value name="VALUE">
+                                  <block type="math_arithmetic" id="Q._^}W-gd+/A/$DGU*[d">
+                                    <field name="OP">MINUS</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="4T#XOI5PNA?iKtf2,h3A">
+                                        <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_arithmetic" id="F=RC_b~sl@!kOvU]~W^9">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="cvZkqJ7|2fEI2TSjvlGc">
+                                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="=brk=$o!g0OHp%N?nvjL">
+                                            <field name="NUM">0.25</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
                               </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="=brk=$o!g0OHp%N?nvjL">
-                                <field name="NUM">0.25</field>
+                            </statement>
+                            <next>
+                              <block type="controls_if" id="t/QP@GA.635+;,y!yS9w">
+                                <mutation else="1"></mutation>
+                                <value name="IF0">
+                                  <block type="logic_compare" id="M*!`lz/3;p2);Pv^n}+!">
+                                    <field name="OP">LT</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="fd}[a|0g%#(,Fl^^ouWl">
+                                        <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_arithmetic" id="dG`,p-|XIa;{XrBc3Ww5">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="MynXhDI^~#Ca3MKSniAY">
+                                            <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="variables_get" id="w4TIL/1uWt(bR%.B]i-t">
+                                            <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="text_print" id="WJx:s:3;36^{o^+ky_^]">
+                                    <value name="TEXT">
+                                      <block type="math_arithmetic" id="cCO8zRJ]T$be1iDF.%2M">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="%5~aI}Wq)BejDN^De$!M">
+                                            <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="variables_get" id="XT5mLW58B?95?e*Kx9it">
+                                            <field name="VAR" id="EnYxO%co2(ZC+?9w#ajr" variabletype="">defaultChildSupport</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                                <statement name="ELSE">
+                                  <block type="text_print" id="kjD0IT!,EZ|-oALp4veK">
+                                    <value name="TEXT">
+                                      <block type="variables_get" id="$2XqJ|j4T=[+_BDJjqs]">
+                                        <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
                               </block>
-                            </value>
+                            </next>
                           </block>
-                        </value>
+                        </next>
                       </block>
-                    </value>
-                  </block>
-                </statement>
-                <next>
-                  <block type="controls_if" id="t/QP@GA.635+;,y!yS9w">
-                    <mutation else="1"></mutation>
-                    <value name="IF0">
-                      <block type="logic_compare" id="M*!`lz/3;p2);Pv^n}+!">
-                        <field name="OP">LT</field>
-                        <value name="A">
-                          <block type="variables_get" id="fd}[a|0g%#(,Fl^^ouWl">
-                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_arithmetic" id="dG`,p-|XIa;{XrBc3Ww5">
-                            <field name="OP">MULTIPLY</field>
-                            <value name="A">
-                              <block type="variables_get" id="MynXhDI^~#Ca3MKSniAY">
-                                <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="iG.:tkzx4xI%g!nI-21H">
-                                <field name="NUM">25</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <statement name="DO0">
-                      <block type="text_print" id="WJx:s:3;36^{o^+ky_^]">
-                        <value name="TEXT">
-                          <block type="math_arithmetic" id="cCO8zRJ]T$be1iDF.%2M">
-                            <field name="OP">MULTIPLY</field>
-                            <value name="A">
-                              <block type="variables_get" id="%5~aI}Wq)BejDN^De$!M">
-                                <field name="VAR" id="@,0y:4cE|QP$aI(^XG|]" variabletype="">amountOfKids</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="vQu-:B;-N:m+T1a,!VDt">
-                                <field name="NUM">25</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </statement>
-                    <statement name="ELSE">
-                      <block type="text_print" id="kjD0IT!,EZ|-oALp4veK">
-                        <value name="TEXT">
-                          <block type="variables_get" id="$2XqJ|j4T=[+_BDJjqs]">
-                            <field name="VAR" id="q5b]afk4J*44DR;*hWI@" variabletype="">result</field>
-                          </block>
-                        </value>
-                      </block>
-                    </statement>
+                    </next>
                   </block>
                 </next>
               </block>

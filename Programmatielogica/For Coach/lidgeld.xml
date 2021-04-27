@@ -1,79 +1,56 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable type="" id="d=z@^^aNCY_x~AW8RL$_">name</variable>
     <variable type="" id="DrZ+n4D[DUvU5=zq`?)0">age</variable>
     <variable type="" id="(]D7c,xCD9rJz+5Io,/_">amountOfKids</variable>
     <variable type="" id="oCGuM,,p4ulLC9`X-%I0">yearlyWage</variable>
-    <variable type="" id=".Qhd:|NWSTGj.Tfwsnb,">cond</variable>
     <variable type="" id="mT)6*V9sn9s)M{Yws/$o">totalMemberships</variable>
     <variable type="" id="g-n=p)VQ!PR_]=lAbfjQ">totalFeeAmount</variable>
     <variable type="" id="d?Bom0s.foK-=r255Y54">reduction</variable>
+    <variable type="" id="#3X%lZ7!hfN=WM8c-rF[">memberName</variable>
+    <variable type="" id="1Y?,kw,@=brJuEbhi)c(">input</variable>
+    <variable type="" id="C!+z/H5r73=LZ@5NwXxg">inputText</variable>
   </variables>
-  <block type="variables_set" id="2$APVka~DJ(2/h#FANIl" x="81" y="132">
-    <field name="VAR" id=".Qhd:|NWSTGj.Tfwsnb," variabletype="">cond</field>
+  <block type="variables_set" id="h!|2Lb1nhqKE=No9vOBl" x="-224" y="-76">
+    <field name="VAR" id="#3X%lZ7!hfN=WM8c-rF[" variabletype="">memberName</field>
     <value name="VALUE">
-      <block type="logic_boolean" id="yJd]3~(`_ct=tBfP8sTT">
-        <field name="BOOL">TRUE</field>
+      <block type="text_prompt_ext" id="6:K@doVfz)8Vpqzd%%x!">
+        <mutation type="TEXT"></mutation>
+        <field name="TYPE">TEXT</field>
+        <value name="TEXT">
+          <block type="text" id=".uci$no%9-`^l,~/j|fe">
+            <field name="TEXT">Enter name or stop/STOP: </field>
+          </block>
+        </value>
       </block>
     </value>
     <next>
-      <block type="controls_whileUntil" id=":qnFzKy^TW%w`x_u`cvq">
-        <field name="MODE">WHILE</field>
-        <value name="BOOL">
-          <block type="logic_compare" id="un3{WUuXolZfYRwWP$:o">
-            <field name="OP">EQ</field>
-            <value name="A">
-              <block type="variables_get" id="!Q3{~sc}4|[y|D6cw[/;">
-                <field name="VAR" id=".Qhd:|NWSTGj.Tfwsnb," variabletype="">cond</field>
-              </block>
-            </value>
-            <value name="B">
-              <block type="logic_boolean" id="DvA^:w%1/Og1z-FJu$6N">
-                <field name="BOOL">TRUE</field>
-              </block>
-            </value>
+      <block type="variables_set" id="IQ=S*y3vxB})iEoAMT:a">
+        <field name="VAR" id="mT)6*V9sn9s)M{Yws/$o" variabletype="">totalMemberships</field>
+        <value name="VALUE">
+          <block type="math_number" id="4K?HUI,)`zGeJ#)wWX(Q">
+            <field name="NUM">0</field>
           </block>
         </value>
-        <statement name="DO">
-          <block type="variables_set" id="hHlX5=V_~XwJKBF4ns?j">
-            <field name="VAR" id="d=z@^^aNCY_x~AW8RL$_" variabletype="">name</field>
+        <next>
+          <block type="variables_set" id="z6WJ}HKT,]}R@L6^4D;%">
+            <field name="VAR" id="g-n=p)VQ!PR_]=lAbfjQ" variabletype="">totalFeeAmount</field>
             <value name="VALUE">
-              <block type="text_prompt_ext" id="{[-U)|A%To4R!-o#Uk;T">
-                <mutation type="TEXT"></mutation>
-                <field name="TYPE">TEXT</field>
-                <value name="TEXT">
-                  <block type="text" id="(uN764gftmw(+2#kH*Mt">
-                    <field name="TEXT">Enter name: </field>
-                  </block>
-                </value>
+              <block type="math_number" id="$gv/jX:017KR`R*qNw3(">
+                <field name="NUM">0</field>
               </block>
             </value>
             <next>
-              <block type="controls_ifelse" id="Rh@Ok6SO)1R:)X;J+4*Y">
-                <value name="IF0">
-                  <block type="logic_operation" id="L^;W`2bh$PctVwZ60S.#">
-                    <field name="OP">OR</field>
+              <block type="controls_whileUntil" id=":qnFzKy^TW%w`x_u`cvq">
+                <field name="MODE">WHILE</field>
+                <value name="BOOL">
+                  <block type="logic_operation" id="ZSvgS/S+l/2F/}{E@VZ6">
+                    <field name="OP">AND</field>
                     <value name="A">
-                      <block type="logic_compare" id="$r2P+IC%ZHWkmoPBQHt^">
-                        <field name="OP">EQ</field>
+                      <block type="logic_compare" id="un3{WUuXolZfYRwWP$:o">
+                        <field name="OP">NEQ</field>
                         <value name="A">
-                          <block type="variables_get" id="gTHTf~Cpq@$F-og^#?b|">
-                            <field name="VAR" id="d=z@^^aNCY_x~AW8RL$_" variabletype="">name</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="text" id="?W9QnkP3BN6$,N){0`NP">
-                            <field name="TEXT">STOP</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="logic_compare" id=")q;I?.k$U*YA!6cg,f7w">
-                        <field name="OP">EQ</field>
-                        <value name="A">
-                          <block type="variables_get" id="jDLoJKfIgU.AQPv-y3ZX">
-                            <field name="VAR" id="d=z@^^aNCY_x~AW8RL$_" variabletype="">name</field>
+                          <block type="variables_get" id="!Yn=a,E#1Wxt2;4%_w1c">
+                            <field name="VAR" id="#3X%lZ7!hfN=WM8c-rF[" variabletype="">memberName</field>
                           </block>
                         </value>
                         <value name="B">
@@ -83,19 +60,24 @@
                         </value>
                       </block>
                     </value>
-                  </block>
-                </value>
-                <statement name="DO0">
-                  <block type="variables_set" id="z|.8DRrLxLdkFXH+[1F|">
-                    <field name="VAR" id=".Qhd:|NWSTGj.Tfwsnb," variabletype="">cond</field>
-                    <value name="VALUE">
-                      <block type="logic_boolean" id="V=pr{R@{mx*^j.UKD:([">
-                        <field name="BOOL">FALSE</field>
+                    <value name="B">
+                      <block type="logic_compare" id="qw+Z%SQFDsV)AG?KHdwV">
+                        <field name="OP">NEQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="*;Gu}Od}}DuQXXNz(NW@">
+                            <field name="VAR" id="#3X%lZ7!hfN=WM8c-rF[" variabletype="">memberName</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="`268w*txMgMw@}jw}?ZR">
+                            <field name="TEXT">STOP</field>
+                          </block>
+                        </value>
                       </block>
                     </value>
                   </block>
-                </statement>
-                <statement name="ELSE">
+                </value>
+                <statement name="DO">
                   <block type="variables_set" id="K5#+:`2m9,$QO%j7IPA7">
                     <field name="VAR" id="d?Bom0s.foK-=r255Y54" variabletype="">reduction</field>
                     <value name="VALUE">
@@ -111,16 +93,13 @@
                       <block type="variables_set" id="MY5b9mKraTPYaib6xHdS">
                         <field name="VAR" id="DrZ+n4D[DUvU5=zq`?)0" variabletype="">age</field>
                         <value name="VALUE">
-                          <block type="declare_integer" id="@EN?G%,9cUac8gFwgUVt">
-                            <value name="INTEGER_INPUT">
-                              <block type="text_prompt_ext" id="/9tD.1!do6pP!gmG{~ZD">
-                                <mutation type="NUMBER"></mutation>
-                                <field name="TYPE">NUMBER</field>
-                                <value name="TEXT">
-                                  <block type="text" id="z*Q_JK-P!a%P}S8xbYWj">
-                                    <field name="TEXT">Enter age: </field>
-                                  </block>
-                                </value>
+                          <block type="procedures_callreturn" id="xI1O]e:|}.e|ZIa]3MA:">
+                            <mutation name="getPostiveInput">
+                              <arg name="inputText"></arg>
+                            </mutation>
+                            <value name="ARG0">
+                              <block type="text" id="f.|Zk25,Vkpb!?ULquo/">
+                                <field name="TEXT">Enter age: </field>
                               </block>
                             </value>
                           </block>
@@ -129,34 +108,28 @@
                           <block type="variables_set" id="thtI+B[!jItUHTqofd(.">
                             <field name="VAR" id="(]D7c,xCD9rJz+5Io,/_" variabletype="">amountOfKids</field>
                             <value name="VALUE">
-                              <block type="declare_integer" id="{jKkkr^0lrpNCko+Iyrw">
-                                <value name="INTEGER_INPUT">
-                                  <block type="text_prompt_ext" id="N/_[wg|o,[dFScTWr+-[">
-                                    <mutation type="NUMBER"></mutation>
-                                    <field name="TYPE">NUMBER</field>
-                                    <value name="TEXT">
-                                      <block type="text" id="s|jNp+s.S4m}_)V~C/uG">
-                                        <field name="TEXT">Enter amount of kids: </field>
-                                      </block>
-                                    </value>
+                              <block type="procedures_callreturn" id="TkoF}I#P`@Sc}f]J0;ms">
+                                <mutation name="getPostiveInput">
+                                  <arg name="inputText"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                  <block type="text" id="*U:y#n/E|EER2wX[_p{I">
+                                    <field name="TEXT">Enter amount of kids: </field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <next>
-                              <block type="variables_set" id="@Ea0`*YbYQ;qb:CVnii(">
+                              <block type="variables_set" id="QBXKwqEC3[l}z:+R*a~^">
                                 <field name="VAR" id="oCGuM,,p4ulLC9`X-%I0" variabletype="">yearlyWage</field>
                                 <value name="VALUE">
-                                  <block type="declare_real" id="-wwuuYxMINVpJ{_0r@)L">
-                                    <value name="REAL_INPUT">
-                                      <block type="text_prompt_ext" id="I?i1;PrKt0]B2N4L?T]h">
-                                        <mutation type="NUMBER"></mutation>
-                                        <field name="TYPE">NUMBER</field>
-                                        <value name="TEXT">
-                                          <block type="text" id="zndFf|~|o!%j]?]+TH$Y">
-                                            <field name="TEXT">Enter yearly salary: </field>
-                                          </block>
-                                        </value>
+                                  <block type="procedures_callreturn" id="myd6LZ|,02{-Knaf,@!0">
+                                    <mutation name="getPostiveInput">
+                                      <arg name="inputText"></arg>
+                                    </mutation>
+                                    <value name="ARG0">
+                                      <block type="text" id="gcfBp7)mtSd7J.gvGVN3">
+                                        <field name="TEXT">Enter yearly salary: </field>
                                       </block>
                                     </value>
                                   </block>
@@ -328,6 +301,22 @@
                                                             </value>
                                                           </block>
                                                         </value>
+                                                        <next>
+                                                          <block type="variables_set" id="Xgy0Taq0,%O:PKU6{_h,">
+                                                            <field name="VAR" id="#3X%lZ7!hfN=WM8c-rF[" variabletype="">memberName</field>
+                                                            <value name="VALUE">
+                                                              <block type="text_prompt_ext" id="xb%3zE0p3mxSV^C:g7Pv">
+                                                                <mutation type="TEXT"></mutation>
+                                                                <field name="TYPE">TEXT</field>
+                                                                <value name="TEXT">
+                                                                  <block type="text" id="fN3h(r4f^u-r+ikl-9:`">
+                                                                    <field name="TEXT">Enter name or stop/STOP: </field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </next>
                                                       </block>
                                                     </next>
                                                   </block>
@@ -348,50 +337,151 @@
                     </next>
                   </block>
                 </statement>
+                <next>
+                  <block type="controls_if" id="sq9_B}xqqVD/_9YvTS_V">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="qJaCv(Ih,o=3V`L4HP6|">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="v|./Tq?;9S*|*[-[#ZbL">
+                            <field name="VAR" id="mT)6*V9sn9s)M{Yws/$o" variabletype="">totalMemberships</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="E=TY`SqjMZoXAN*DjrJ)">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="text_print" id="Yy*#RoHNrVd#)/+{rb?:">
+                        <value name="TEXT">
+                          <block type="text" id="of?Xn3$wE`q}tR![@{BL">
+                            <field name="TEXT">No memberships were recorded!</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="text_print" id="wIir8p]Q^X-s6Y2Mb6NU">
+                        <value name="TEXT">
+                          <block type="text_join" id="l)zZ_}M[,[{s)nk%Mjxd">
+                            <mutation items="4"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="m9SRvSb!-7Q.,n]BYmB;">
+                                <field name="TEXT">Total Memberships / Average Fee: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="variables_get" id="l/w53.$wuwiDh/aiT3Z3">
+                                <field name="VAR" id="mT)6*V9sn9s)M{Yws/$o" variabletype="">totalMemberships</field>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="text" id=":)q(qSV_yj{*%)|8Q(t.">
+                                <field name="TEXT"> / </field>
+                              </block>
+                            </value>
+                            <value name="ADD3">
+                              <block type="math_arithmetic" id="@K5HdcNbz|kz$7zQ42ht">
+                                <field name="OP">DIVIDE</field>
+                                <value name="A">
+                                  <block type="variables_get" id="$hn3sB:UOWRN|m=h+j}N">
+                                    <field name="VAR" id="g-n=p)VQ!PR_]=lAbfjQ" variabletype="">totalFeeAmount</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="0#!*ORg)qR)6cZ1EG@+*">
+                                    <field name="VAR" id="mT)6*V9sn9s)M{Yws/$o" variabletype="">totalMemberships</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
-        </statement>
-        <next>
-          <block type="text_print" id="wIir8p]Q^X-s6Y2Mb6NU">
-            <value name="TEXT">
-              <block type="text_join" id="l)zZ_}M[,[{s)nk%Mjxd">
-                <mutation items="4"></mutation>
-                <value name="ADD0">
-                  <block type="text" id="m9SRvSb!-7Q.,n]BYmB;">
-                    <field name="TEXT">Total Memberships / Average Fee: </field>
-                  </block>
-                </value>
-                <value name="ADD1">
-                  <block type="variables_get" id="l/w53.$wuwiDh/aiT3Z3">
-                    <field name="VAR" id="mT)6*V9sn9s)M{Yws/$o" variabletype="">totalMemberships</field>
-                  </block>
-                </value>
-                <value name="ADD2">
-                  <block type="text" id=":)q(qSV_yj{*%)|8Q(t.">
-                    <field name="TEXT"> / </field>
-                  </block>
-                </value>
-                <value name="ADD3">
-                  <block type="math_arithmetic" id="@K5HdcNbz|kz$7zQ42ht">
-                    <field name="OP">DIVIDE</field>
-                    <value name="A">
-                      <block type="variables_get" id="$hn3sB:UOWRN|m=h+j}N">
-                        <field name="VAR" id="g-n=p)VQ!PR_]=lAbfjQ" variabletype="">totalFeeAmount</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="variables_get" id="0#!*ORg)qR)6cZ1EG@+*">
-                        <field name="VAR" id="mT)6*V9sn9s)M{Yws/$o" variabletype="">totalMemberships</field>
-                      </block>
-                    </value>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defreturn" id=":`{M+qKQ/uwu_`e51(Ap" x="587" y="-96">
+    <mutation>
+      <arg name="inputText" type="VAL"></arg>
+    </mutation>
+    <field name="NAME">getPostiveInput</field>
+    <comment pinned="false" h="80" w="160">Get input until positive</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="~R.Jrw)L^r?knJ@y.,44">
+        <field name="VAR" id="1Y?,kw,@=brJuEbhi)c(" variabletype="">input</field>
+        <value name="VALUE">
+          <block type="declare_integer" id="K+`(Ce_/A@B1xlXvD/8E">
+            <value name="INTEGER_INPUT">
+              <block type="text_prompt_ext" id="L0+Y7w,FhK}i2Yo%pVf/">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <block type="variables_get" id="$V:[^{VjbIz1D0KR3_7@">
+                    <field name="VAR" id="C!+z/H5r73=LZ@5NwXxg" variabletype="">inputText</field>
                   </block>
                 </value>
               </block>
             </value>
           </block>
+        </value>
+        <next>
+          <block type="controls_whileUntil" id="fB`7zsLM*qKynU2Mg5_e">
+            <field name="MODE">WHILE</field>
+            <value name="BOOL">
+              <block type="logic_compare" id="7f{#W#I!kQ^5)vxsx@4+">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="variables_get" id="i_1PnIgBQkIqWlLN6ngL">
+                    <field name="VAR" id="1Y?,kw,@=brJuEbhi)c(" variabletype="">input</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="JtNAzQ(5}+P]f(dGQVXv">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="{{=bW}K__QK3ai:YxKiT">
+                <field name="VAR" id="1Y?,kw,@=brJuEbhi)c(" variabletype="">input</field>
+                <value name="VALUE">
+                  <block type="declare_integer" id="[1`mxdNb6#+3tVtXeX|;">
+                    <value name="INTEGER_INPUT">
+                      <block type="text_prompt_ext" id="~:kFg{czC@6o!v+l.nov">
+                        <mutation type="NUMBER"></mutation>
+                        <field name="TYPE">NUMBER</field>
+                        <value name="TEXT">
+                          <block type="variables_get" id=";s,8Mw[?iTHFl532G~k#">
+                            <field name="VAR" id="C!+z/H5r73=LZ@5NwXxg" variabletype="">inputText</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
         </next>
       </block>
-    </next>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="cHZs8wg:SjBFr.!D%Qvu">
+        <field name="VAR" id="1Y?,kw,@=brJuEbhi)c(" variabletype="">input</field>
+      </block>
+    </value>
   </block>
 </xml>
