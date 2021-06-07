@@ -1,0 +1,230 @@
+Mijn eigen opdracht is gebaseerd op een project dat ik zelf heb gemaakt.
+Dit project was een Discord Bot, geschreven in Python met behulp van sqlite3 voor de database.
+De database die ik voor deze oefening zal maken zal een gesimplificeerde versie van de echte zijn.
+
+Context:
+Een Discord bot kan voor heel veel gebruikt worden. Meest gebruikt zijn deze voor moderatiefuncties.
+Maar ook spelletjes en dergelijke komen voor.
+De Discord bot die ik gemaakt heb is omnivalent en brengt de aspecten samen.
+Voorbeeldfuncties:
+ - Gelukkige verjaardag wensen
+ - (Tijdelijk) verbannen of muten
+ - Gebruikers waarschuwen
+ - Items krijgen uit paketten
+ - Items verwisselen met andere spelers
+ - Items verkopen
+ - Trouwen met een andere gebruiker in één server
+ - Levelen
+ - Items unlocken via dagelijkse rewards rewards
+ - (Heel wat functies waar de database niet voor nodig is)
+ - ...
+
+Discord houdt voor heel wat dingen gegevens bij die handig zijn voor de database,
+zo heeft elke gebruiker al een uniek ID en ook een hash. Hetzelfde geld voor elke server.
+Naast deze gegevens zijn er nog heel wat gegevens nodig om aan bovenstaande functionaliteit te voldoen.
+
+
+- Gegevenslijst -
+serverId
+serverName
+serverChannelCount
+serverBotCount
+serverJoinDate
+userId
+userHash
+userName
+userExperience
+userLevel (BEREKENBAAR)
+userBalance
+userJoinDate
+userBirthday
+userTimezone
+userLastDaily
+marriageDate
+proposerId
+proposedId
+auctionId
+auctionAmount
+auctionSellPrice
+auctioneerId
+itemId
+itemName
+itemRarity
+itemDefaultPrice
+itemExperienceRequirement
+itemAmountInventory
+itemAmountAuctioned
+itemPriceAuctioned
+rarityDropChance
+punishmentType
+punishmentName
+punishmentStartTime
+punishmentEndTime
+punishmentWeight
+
+
+- 1e Normaalvorm -
+Servers
+serverId
+name
+channelCount
+botCount
+joinDate
+
+Users
+userId
+hash
+name
+experience
+balance
+joinDate
+birthday
+timezone
+lastDaily
+
+Items
+itemId
+name
+rarity
+defaultPrice
+experienceRequirement
+
+marriageDate
+proposerId
+proposedId
+auctionId
+auctionAmount
+auctionPPI
+auctioneerId
+itemAmountInventory
+itemAmountAuctioned
+itemPriceAuctioned
+rarityDropChance
+punishmentType
+punishmentName
+punishmentStartTime
+punishmentEndTime
+punishmentWeight
+
+
+- 2e Normaalvorm -
+Servers
+serverId PK
+name
+channelCount
+botCount
+joinDate
+
+Users
+userId PK
+hash
+name
+experience
+balance
+joinDate
+birthday
+timezone
+lastDaily
+
+Items
+itemId PK
+name
+rarityId
+defaultPrice
+experienceRequirement
+
+Rarities
+rarityId PK
+name
+dropChance
+
+Punishments
+userId PK
+serverId PK
+type PK
+name
+weight
+startDate PK
+endDate
+
+Marriages
+serverId PK
+proposerId PK
+proposedId PK
+date
+
+Auctions
+auctionId PK
+auctioneerId
+itemId
+amount
+sellPrice
+
+InventoryListings
+userId PK
+itemId PK
+amount
+
+
+- 3 Normaalvorm -
+Servers
+serverId PK
+name
+channelCount
+botCount
+joinDate
+
+Users
+userId PK
+hash
+name
+experience
+balance
+joinDate
+birthday
+timezone
+lastDaily
+
+Items
+itemId PK
+name
+rarityId
+defaultPrice
+experienceRequirement
+
+Rarities
+rarityId PK
+name
+dropChance
+
+Punishments
+punishmentId PK
+userId
+serverId
+punishmentTypeId
+startDate
+endDate
+(natural key: userId, serverId, punishmentTypeId, startDate)
+
+PunishmentTypes
+punishmentTypeId PK
+name
+weight
+
+Marriages
+serverId PK
+proposerId PK
+proposedId PK
+date
+
+Auctions
+auctionId PK
+auctioneerId
+itemId
+amount
+sellPrice
+
+InventoryListings
+userId PK
+itemId PK
+amount

@@ -4,7 +4,7 @@ with open('numList.txt', 'r') as inFile:
     x = inFile.readline()
     y = []
     for el in x:
-        if el != '[' and el != ']' and el != ',' and el != '\n':
+        if el not in ['[', ']', ',', '\n']:
             y.append(el)
 
     res = []

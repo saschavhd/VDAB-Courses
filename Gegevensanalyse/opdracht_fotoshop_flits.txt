@@ -1,0 +1,65 @@
+ - Gegevenslijst -
+factuurId, factuurDatum, klantId, klantGender, klantNaam, klantVoornaam, klantStraat, klantHuisnummer, klantBus, klantPlaats, klantPostcode, artikelRegelNummer (BEREKENBAAR), artikelAantal, artikelId, artikelOmschrijving, artikelPrijs, regelTotaalPrijs (BEREKENBAAR), factuurTotaalPrijs (BEREKENBAAR)
+
+
+ - 1e Normaalvorm -
+Facturen - factuurId (PK), klantId, factuurDatum
+
+Verwerkingen - artikelId (PK), factuurId (PK), klantId, klantGender, klantNaam, klantVoornaam, klantStraat, klantHuisnummer, klantPlaats, klantPostcode, artikelAantal, artikelId, artikelOmschrijving, artikelPrijs, verkoopPrijs
+
+
+- 2e Normaalvorm -
+Facturen - factuurId (PK), klantId, factuurDatum
+
+Verwerkingen - artikelId (PK), factuurId PK, aantal, verkoopPrijs
+
+Klanten - klantId (PK), gender, naam, voornaam, straat, huisnummer, bus, plaats, postcode
+
+Artikelen - artikelId (PK), artikelOmschrijving, artikelPrijs
+
+
+- 3e Normaalvorm -
+Facturen - factuurId (PK), klantId, factuurDatum
+
+Verwerkingen - artikelId (PK), factuurId (PK), aantal, verkoopPrijs
+
+Klanten - klantId (PK), genderId, naam, voornaam, straat, huisnummer, bus, plaatsId
+
+Artikelen - artikelId (PK), artikelOmschrijving, artikelPrijs
+
+Plaatsen - plaatsId (PK), postcode, plaatsNaam
+
+Genders - genderId (PK), genderNaam, genderAfkorting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

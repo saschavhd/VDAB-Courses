@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Competetie</title>
+    </head>
+    <body>
+        <form action="mailto:insertyourmailhere@gmail.com?&subject=Inschrijving%20Recept%20Competitie" enctype="text/plain" method="POST">
+            <div>
+                <h2>Personalia</h2>
+                <label>Naam*</label>
+                    <input type="text" id= "name" name="name" required><br>
+                <label>Voornaam*</label>
+                    <input type="text" id= "first_name" name="first_name" required><br>
+                <label>E-mailadres*</label>
+                    <input type="email" id= "email" name="email" required><br>
+            </div>
+            <div>
+                <h2>Recept</h2>
+                <label>Titel recept*</label>
+                    <input type="title" id= "title" name="title" required><br>
+                <label>Soort recept*</label><br>
+                <input type="radio" id="type" name="type" value="aperitief" required>
+                <label>Aperitief, aperitiefhapje</label><br>
+                <input type="radio" id="type" name="type" value="voorgerecht" required>
+                <label>Voorgerecht</label><br>
+                <input type="radio" id="type" name="type" value="hoofdgerecht" required>
+                <label>Hoofdgerecht</label><br>
+                <input type="radio" id="type" name="type" value="dessert" required>
+                <label>Dessert</label><br>
+                <label for="content">Inhoud recept*</label><br>
+                    <textarea name="content" rows="10" cols="50"></textarea><br>
+                    <input type="submit" value="Versturen">
+                    <input type="reset" value="Wissen">
+            </div>
+            <p>Velden met * zijn verplicht.</p>
+        </form>
+    </body>
+</html>

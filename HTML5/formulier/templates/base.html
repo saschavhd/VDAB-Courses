@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Competitie</title>
+    </head>
+    <body>
+        {% for message in get_flashed_messages() %}
+        <div id="alert_container">
+            <button id="alert_button" type="button">&times;</button>
+            {{ message }}
+        </div>
+        {% endfor %}
+
+        {% block body %}
+        {% endblock %}
+
+        <script type="text/javascript">
+            var alert_container = document.getElementById('alert_container');
+            var alert_button = document.getElementById('alert_button');
+            alert_button.addEventListener('click', () => {
+                alert_container.remove()
+            })
+        </script>
+    </body>
+</html>
