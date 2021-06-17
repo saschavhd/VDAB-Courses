@@ -6,9 +6,10 @@ body {
 }
 
 #banner {
+    display: block;
     overflow: hidden;
     width: 100%;
-    height: inherit;
+    height: 160px;
 }
 
 nav {
@@ -52,11 +53,6 @@ nav li {
     width: 940px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.header {
-    height: 160px;
-    overflow: hidden;
 }
 
 .container {
