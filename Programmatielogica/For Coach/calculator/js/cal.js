@@ -41,7 +41,7 @@ function clear() {
 
 function getResult() {
     let fn = parseInt(firstNum);
-    let sn = parseInt(secondNum)
+    let sn = parseInt(secondNum);
     switch(operation) {
         case "add":
             resT.innerHTML = fn + sn;
