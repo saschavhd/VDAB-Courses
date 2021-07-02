@@ -1,0 +1,104 @@
+/* General */
+
+body {
+    background-image: url("../img/JigoroKano.png");
+    background-repeat: repeat
+}
+
+#wrapper {
+    width: 840px;
+    height: 800px;
+    background-color: #1F1F1F;
+    color: #FFFFFF;
+    font-family: helvetica, arial, sans-serif;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 40px;
+}
+
+/* Header  */
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 60px;
+    background-color: red;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+header p {
+    font-size: 22px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* Nav */
+
+nav ul {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #FF0000;
+}
+
+/* Content */
+
+#flex-container {
+    display: flex;
+    margin: 0px 30px;
+}
+
+#flex-container h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Left Column */
+
+#left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    line-height: 1.4em;
+}
+
+/* Right column  */
+
+#right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+#right section:first-of-type p {
+    line-height: 0.3em;
+}
+
+#right section:first-of-type p:first-of-type {
+    padding-top: 15px;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #FFFFFF;
+    margin-top: 10px;
+    padding-top: 5px;
+}

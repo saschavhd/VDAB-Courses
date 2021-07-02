@@ -1,0 +1,21 @@
+body{
+	background-color: #8080B3;
+	font-family: Helvetica, "Times New Roman", sans-serif;
+}
+
+td {
+	font-family: fantasy;
+	width: 100px;
+    text-align: center;
+}
+
+table, tr, td {
+	border: 3px solid #FFD700;
+	border-collapse: collapse;
+	padding: 2em;
+	background-color: #CCDDCC;
+}
+
+ol {
+	list-style-type: lower-greek;
+}

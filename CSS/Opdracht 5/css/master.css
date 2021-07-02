@@ -1,0 +1,29 @@
+div {
+    width: 150px;
+    height: 150px;
+    color: white;
+    text-align: center;
+}
+
+div #el1 {
+    background: green;
+    position: absolute;
+    height: 200px;
+    top: 50px;
+    left: 200px;
+    z-index: 2;
+}
+
+div #el2 {
+    background: blue;
+    position: relative;
+    top: 100px;
+    width: 300px;
+    z-index: 1;
+}
+
+div #el3 {
+    background: black;
+    position: absolute;
+    z-index: 3;
+}
