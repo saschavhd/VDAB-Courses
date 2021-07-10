@@ -1,0 +1,17 @@
+#container {
+    width: 66%;
+    /* margin: auto; */
+}
+
+img {
+    float: right;
+}
+
+span {
+    font-style: italic;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #0000FF;
+}

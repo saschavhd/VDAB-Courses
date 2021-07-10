@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/master.css">
+		<title>Het Document Object Model</title>
+	</head>
+<body>
+	<div id="container">
+		<section>
+			<h1>Het Document Object Model</h1>
+			<img src="img/linda.jpg" alt="Programmeur Linda">
+			<p>De meeste programmeurs <span>leven</span> op koffie</p>
+			<p>
+				Veel programmeurs zijn liefhebbers van
+				<a href="http://en.wikipedia.org/wiki/Science-fiction">science-fiction</a>
+			</p>
+		</section>
+		<section>
+			<h2>Onze programmeertalen</h2>
+			<ul>
+				<li>Javascript</li>
+				<li>PHP</li>
+				<li>ASP.Net</li>
+				<li>Java</li>
+			</ul>
+		</section>
+	</div>
+<script>
+	// Er zijn natuurlijk altijd veel mogelijkheden om dit soort dingen aan te pakken!
+	// Oefening 1
+	document.querySelector("#container section:first-of-type p:first-of-type").innerHTML += " en <span>chocolade<span>";
+
+	// Oefening 2
+	let footer = document.createElement("div");
+	footer.innerHTML = "Je vindt een job op de <a href='https://www.vdab.be/' target='_blank'>vdab</a> website";
+	document.querySelector("#container").appendChild(footer);
+
+	// Oefening 3
+	let total_divs = document.getElementsByTagName('div').length;
+	console.log("Total amount of divs on page:", total_divs);
+
+	// OPDRACHT
+	let sci_fi_link = document.querySelector("#container section:first-of-type p:last-of-type a");
+	sci_fi_link.href="https://www.google.com/search?q=science-fiction&sxsrf=ALeKk03pC8GYKJa0jmG6-PqbNiFvL0-_xw:1625734218844&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiky_P0i9PxAhWpM-wKHT_ACEcQ_AUoAXoECAEQAw&biw=1022&bih=981";
+	sci_fi_link.target="_blank";
+</script>
+</body>
+</html>

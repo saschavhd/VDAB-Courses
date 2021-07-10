@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/master.css">
+        <title>taalkeuze</title>
+    </head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="francais.html" class="lang-navigator">Français</a></li>
+            <li><a href="nederlands.html" class="lang-navigator">Nederlands</a></li>
+            <li><a href="english.html" class="lang-navigator">English</a></li>
+        </ul>
+    </nav>
+
+    <h1>Welkom, Bienvenue, Welcome</h1>
+    <h3>Kies uw taal, choissisez votre langue, choose your language</h3>
+    <button id="reset-cookies">destory Cookie</button>
+<script src="js/master.js" type="text/javascript"></script>
+<script type="text/javascript">
+    // --- INIT ---
+    const langs = {
+        'Français': 'francais',
+        'English': 'english',
+        'Nederlands': 'nederlands'
+    };
+
+    // --- DOM INIT ---
+    const refs = document.getElementsByClassName('lang-navigator');
+
+    // --- EVENT LISTENERS ---
+
+    // Window load
+    window.addEventListener('load', () => {
+        // Get saved language information
+        const langChoice = window.localStorage.getItem('lang');
+        // If none -> stay on language choice page
+        if (langChoice == null) {return;}
+        // if found -> redirect to appropatie page
+        else {window.location.assign(`${langChoice}.html`);}
+    });
+
+    // Language choice
+    for (let i = 0; i < refs.length; i++) {
+        refs[i].addEventListener('click', () => {
+            window.localStorage.setItem('lang', langs[refs[i].innerHTML]);
+        });
+    }
+</script>
+</body>
+</html>

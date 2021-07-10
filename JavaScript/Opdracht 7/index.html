@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>JS PF project: een ISBN nummer valideren</title>
+		<style media="screen" type="text/css">
+			div.vb{
+				background-color:#CCFFCC;
+				padding:1em;
+				}
+		</style>
+	</head>
+<body>
+	<h1>JS PF project: een ISBN nummer valideren</h1>
+	<form name="frmISBN" action="http://isbndb.com/search-all.html" method="get">
+		<p>Vul een ISBN-10 of ISBN-13 nummer in: <input type="text" name="kw"><input type="submit" value="Valideer"></p>
+	</form>
+	<p>Enkele testwaarden (geldig en ongeldig):</p>
+	<div id="output">978-90-209-7557-4<br>978-2-87386-537-5<br>0-596-00048-0<br>0 9579218 4 3<br>90-430-0508-8<br>90-430-0779-X<br>978-90-209-7455-3<br>048629868X<br>0_140009_930<br>978-0552139823<br>978-0-596-51774-8<br>978-1-59059-908-2<br></div>
+	<p>Geldige isbn-nummers worden doorgestuurd naar isbndb.com. Dat betekent niet dat ze gevonden zullen worden. Ongeldige nummers worden geweigerd.</p>
+
+<script type="text/javascript">
+	/**** OPLOSSING ISBN10 zonder taak -> met taak (ISBN13) zie JS_taakbasis_isbn13_afgewerkt.html ****/
+	//globals
+	var divOutput;
+	var isbnVeld;
+	var frm;
+	var arrISBN = ['978-90-209-7557-4','978-2-87386-537-5','0-596-00048-0','0 9579218 4 3','90-430-0508-8','90-430-0779-X','978-90-209-7455-3','048629868X','0_140009_930','978-0552139823','978-0-596-51774-8','978-1-59059-908-2']
+
+	//*******************************
+	window.onload = function(){
+
+		divOutput	= document.getElementById('output');
+		frm			= document.frmISBN;
+		isbnVeld 	= frm.kw; //name kw noodzakelijk voor isbndb.com
+
+
+		//lijst testwaarden
+		var trStrNummers = "";
+		for(var i=0;i<arrISBN.length;i++){
+			trStrNummers += `${arrISBN[i]} | ${isValidISBN(arrISBN[i])}<br>`;
+			}
+		divOutput.innerHTML = trStrNummers;
+
+	}
+
+	function isValidISBN(inStr) {
+	    let sum, digit, check;
+
+		// Trim and remove everything except digits and 'X'
+	    let trStr = inStr.replace(/[^0-9X]/gi, '');
+
+		// Check if correct length (10 or 13)
+	    if (trStr.length != 10 && trStr.length != 13) {return false;}
+
+		// ISBN 10's
+		if (trStr.length == 10) {
+		   sum = 0;
+		   // Loop through string and add digit value multiplied by it's pos to sum
+		   for (let i = 0; i < 9; i++) {
+			   digit = parseInt(trStr[i]);
+			   sum += (i+1) * digit;
+		   }
+		   // Get modolus 11 of the sum
+		   check = sum % 11;
+		   // If check number is 10, replace it by X
+		   if (check == 10) {check = 'X';}
+		   // Return whether check number is equal to last num of to check ISBN
+		   return (check == trStr[trStr.length - 1]);
+	   }
+
+	   	// ISBN 13's
+	    if (trStr.length == 13) {
+	        sum = 0;
+			// Loop through string
+	        for (let i = 0; i < 12; i++) {
+	            digit = parseInt(trStr[i]);
+				// If even add value of digit
+	            if (i % 2 == 0) {sum += digit;}
+				// If odd add triple of value
+				else {sum += 3 * digit;}
+	        }
+			// Fill in sum values and get check number
+	        check = (10 - (sum % 10)) % 10;
+			// Return whether check number is equal to last num of to check ISBN
+	        return (check == trStr[trStr.length-1]);
+	    }
+	}
+</script>
+</body>
+</html>

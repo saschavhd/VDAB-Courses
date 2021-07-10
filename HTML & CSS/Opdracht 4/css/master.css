@@ -1,0 +1,206 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+p {
+    margin: 1rem 2rem;
+    line-height: 1.5em;
+}
+
+h1, h2, h3, ul {
+    margin: 2rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #7EA107;
+}
+
+p, ul {
+    text-align: left;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    color: #52463f ;
+}
+
+strong {
+    color: #9A3098;
+}
+
+a:link, a:visited {
+    color: #4C86CF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #058;
+}
+
+.login-btn {
+    color: #FFFFFF;
+    padding: 0.1rem 0.8rem;
+    border: 1px solid green;
+    background-color: #718C07;
+}
+
+.wrapper {
+    text-align: justify;
+    min-height: 100%;
+    margin-bottom: -6rem;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #8FB209;
+    border-bottom: 2px inset #808080;
+    color: #FFFFFF;
+}
+
+#vdab-logo {
+    margin: 1rem 2rem;
+    width: 200px;
+    height: 90px;
+}
+
+.header-form {
+    flex-grow: 1;
+}
+
+.header-form form {
+    float: right;
+    display: flex;
+}
+
+.header-form form input {
+    margin: 0 1rem;
+}
+
+/* NAVIGATION */
+#mobile-nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 2px inset #808080;
+}
+
+#mobile-nav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 5rem;
+    text-decoration: none;
+    font-size: 3rem;
+    color: #000000;
+    background-color: #D3D3D3;
+}
+
+#mobile-nav a:hover {
+    background-color: #7EA107;
+}
+
+#desktop-nav {
+    display: none;
+}
+
+#desktop-nav ul {
+    margin: 0 0 0.5rem 0;
+}
+
+#desktop-nav ul li {
+    display: inline-block;
+}
+
+#desktop-nav ul li:not(:first-of-type) {
+    border-left: 1px solid #000000;
+}
+
+#desktop-nav ul li a:link, #desktop-nav ul li a:visited {
+    text-decoration: none;
+    color: #000000;
+    padding: 0 1rem;
+}
+
+#desktop-nav ul li a:hover {
+    color: #058;
+}
+
+/* FOOTER */
+.fill, footer {
+    height: 6rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid #D3D3D3;
+    padding-top: 0.5rem;
+}
+
+footer p:last-child {
+    font-style: italic;
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .wrapper .header-form {
+        width: 100%;
+        background: #8FB209;
+        display: flex;
+        justify-content: center;
+    }
+
+    .wrapper .header-form form {
+        width: 80%;
+        height: 2rem;
+        align-items: center;
+    }
+
+    header div, .top, .middle, .bottom, .foot {
+        width: 80%;
+        margin: auto;
+    }
+
+    header {
+        height: auto;
+        background-color: #FFFFFF;
+        flex-direction: column-reverse;
+    }
+
+    header div form {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .logo-nav-container-desktop {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    #mobile-nav {
+        display: none;
+    }
+
+    #desktop-nav {
+        display: block;
+    }
+
+}

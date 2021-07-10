@@ -1,0 +1,162 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 60%;
+    background-color: #F7F7F7;
+    margin: auto;
+}
+
+header {
+    background-color: #D93E89;
+    color: #FFFFFF;
+    padding: 1em 2em;
+}
+
+header h1 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 4em;
+}
+
+section h2,
+section h4 {
+    margin: 20px;
+}
+
+/* In stead of using media for re-aligning of the models,
+could set grid-template-columns: repeat(auto-fit, minmax(?px, 1fr))*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+    width: 95%;
+    margin: auto;
+}
+
+.model {
+    width: 60%;
+    height: 130px;
+    background-color: #A5CB4E;
+    place-self: center;
+    text-align: center;
+    padding: 1em 2em;
+}
+
+.model img {
+    width: 80px;
+    height: 120px;
+    margin: auto;
+}
+
+.model span {
+    display: block;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    margin-top: 2em;
+}
+
+.left {
+    flex: 2;
+    background-color: #F7F7F7;
+    padding: .5em 1em;
+    border: 10px solid #FD6943;
+}
+
+.left h2 {
+    margin: 10px;
+}
+
+.left p {
+    margin: 5px;
+    font-size: .75em;
+}
+
+.left img {
+    float: left;
+    margin-right: 10px;
+}
+
+.right {
+    flex: 1;
+    background-color: #55C5E8;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    height: inherit;
+    text-align: center;
+}
+
+.right a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    justify-content: center;
+    align-content: center;
+    color: black;
+}
+
+.right a:hover {
+    background-color: #7afaf6;
+}
+
+footer {
+    background-color: #F4E740;
+    padding: 2em;
+    font-size: .75em;
+}
+
+@media only screen and (max-width: 1400px) {
+    .wrapper {
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .right a {
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 495px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .left {
+        text-align: center;
+    }
+    .left img {
+        float: none;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}

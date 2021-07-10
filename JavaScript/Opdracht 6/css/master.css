@@ -1,0 +1,14 @@
+nav {
+    background-color: #0000FF;
+    font-size: 1.5rem;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+nav ul li a:link, nav ul li a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
