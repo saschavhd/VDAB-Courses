@@ -137,56 +137,83 @@
 <script type="text/javascript">
 	// INIT
 	let allVisable = true;
-	const langs = {
+	// Language dictionary for individual show buttons
+	const showButtonLang = {
 		"nl": "Klik hier om de verborgen foto terug weer te geven!",
 		"fr": "Cliquez ici pour afficher à nouveau l'image cachée!",
 		"en": "Click here to show the hidden image again!"
 	};
+	// Language dictionary for main button
+	const mainButtonLang = {
+		"show": {
+			"nl": "Alle beelden weergeven",
+			"fr": "Afficher toutes les images",
+			"en": "Show all images"
+		},
+		"hide": {
+			"nl": "Alle beelden verbergen",
+			"fr": "Masquer toutes les images",
+			"en": "Hide all images"
+		}
+	};
+
+	// Language setter (change this to change language of buttons)
 	const lang = "fr";
 
 	// DOM INIT
 	const mainButton = document.getElementById('hoofdknop');
 	const screenshots = document.getElementsByClassName('screenshot');
-
-	// EXTRA FUNCTIONS
-	function removeAllShowButtons() {
-		let showButtons = document.getElementsByClassName('show-button');
-		for (let i = 0; i < showButtons.length; i++) {
-			showButtons[i].remove();
-		}
-	}
+	let showButtons = [];
 
 	// EVENT LISTENERS
 	mainButton.addEventListener('click', () => {
 		if (allVisable == true) {
+			// Trigger click event on all images
 			for (let i = 0; i < screenshots.length; i++) {
-				screenshots[i].style.display = 'none';
-				allVisable = false;
+				screenshots[i].click();
 			}
+			// Change main button text
+			mainButton.innerHTML = mainButtonLang['show'][lang];
+			allVisable = false;
 		}
 		else {
+			const showButtons = document.getElementsByClassName('show-button')
+			// Trigger click event on all show buttons
 			for (let i = 0; i < screenshots.length; i++) {
-				screenshots[i].style.display = 'block';
-				allVisable = true;
+				showButtons[i].click();
 			}
+			// Change main button text
+			mainButton.innerHTML = mainButtonLang['hide'][lang];
+			allVisable = true;
 		}
-		removeAllShowButtons();
-	})
+	});
 
+	// Set mainButton to appropriate language
+	mainButton.innerHTML = mainButtonLang['hide'][lang]
+
+	// MAIN LOOP
 	for (let i = 0; i < screenshots.length; i++) {
+		// Add image event listener (hdie image and show button)
 		screenshots[i].addEventListener('click', () => {
 			screenshots[i].style.display = 'none';
-
-			// SHOW AGAIN BUTTON
-			const showButton = document.createElement('button');
-			showButton.className = "show-button";
-			showButton.innerHTML = langs[lang];
-			showButton.addEventListener('click', () => {
-				showButton.previousElementSibling.style.display = 'block';
-				showButton.remove();
-			});
-			screenshots[i].parentElement.appendChild(showButton);
+			showButton.style.display = 'block';
 		});
+
+		// Create button element
+		const showButton = document.createElement('button');
+		// Setup button properties
+		showButton.className = "show-button";
+		showButton.innerHTML = showButtonLang[lang];
+		showButton.style.display = 'none';
+		// Add button's event listener (hide button and show image)
+		showButton.addEventListener('click', () => {
+			showButton.previousElementSibling.style.display = 'block';
+			showButton.style.display = 'none';
+		});
+		// Add button element to shared container
+		screenshots[i].parentElement.appendChild(showButton);
+		// Add button element to list
+		showButtons.push(showButton);
 	}
 </script>
 </body>
