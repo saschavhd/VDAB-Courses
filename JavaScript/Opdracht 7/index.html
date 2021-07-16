@@ -13,37 +13,58 @@
 	</head>
 <body>
 	<h1>JS PF project: een ISBN nummer valideren</h1>
-	<form name="frmISBN" action="http://isbndb.com/search-all.html" method="get">
-		<p>Vul een ISBN-10 of ISBN-13 nummer in: <input type="text" name="kw"><input type="submit" value="Valideer"></p>
+	<form name="isbnForm" onSubmit="return checkRedirect();">
+		<p>Vul een ISBN-10 of ISBN-13 nummer in: <input type="text" name="kw"><input type="submit" name="submit "value="Valideer"></p>
 	</form>
 	<p>Enkele testwaarden (geldig en ongeldig):</p>
 	<div id="output">978-90-209-7557-4<br>978-2-87386-537-5<br>0-596-00048-0<br>0 9579218 4 3<br>90-430-0508-8<br>90-430-0779-X<br>978-90-209-7455-3<br>048629868X<br>0_140009_930<br>978-0552139823<br>978-0-596-51774-8<br>978-1-59059-908-2<br></div>
 	<p>Geldige isbn-nummers worden doorgestuurd naar isbndb.com. Dat betekent niet dat ze gevonden zullen worden. Ongeldige nummers worden geweigerd.</p>
 
 <script type="text/javascript">
-	/**** OPLOSSING ISBN10 zonder taak -> met taak (ISBN13) zie JS_taakbasis_isbn13_afgewerkt.html ****/
-	//globals
-	var divOutput;
-	var isbnVeld;
-	var frm;
-	var arrISBN = ['978-90-209-7557-4','978-2-87386-537-5','0-596-00048-0','0 9579218 4 3','90-430-0508-8','90-430-0779-X','978-90-209-7455-3','048629868X','0_140009_930','978-0552139823','978-0-596-51774-8','978-1-59059-908-2']
+    // Constants
+    const arrISBN = [
+        '978-90-209-7557-4',
+        '978-2-87386-537-5',
+        '0-596-00048-0',
+        '0 9579218 4 3',
+        '90-430-0508-8',
+        '90-430-0779-X',
+        '978-90-209-7455-3',
+        '048629868X',
+        '0_140009_930',
+        '978-0552139823',
+        '978-0-596-51774-8',
+        '978-1-59059-908-2'
+    ];
 
-	//*******************************
-	window.onload = function(){
+    // Init
+    const divOutput = document.getElementById('output');
 
-		divOutput	= document.getElementById('output');
-		frm			= document.frmISBN;
-		isbnVeld 	= frm.kw; //name kw noodzakelijk voor isbndb.com
+    // Onload event
+	window.onload = function() {
 
-
-		//lijst testwaarden
-		var trStrNummers = "";
-		for(var i=0;i<arrISBN.length;i++){
+        // Loop through test values
+		let trStrNummers = "";
+		for (let i=0; i < arrISBN.length; i++) {
 			trStrNummers += `${arrISBN[i]} | ${isValidISBN(arrISBN[i])}<br>`;
-			}
+		}
 		divOutput.innerHTML = trStrNummers;
-
 	}
+
+    // Submit event
+     function checkRedirect() {
+		const isbnForm = document.isbnForm;
+		// alert(isbnForm.kw.value)
+
+        if (isValidISBN(isbnForm.kw.value) == true) {
+            const isbn = isbnForm.kw.value.replace(/[^0-9X]/gi, '');
+            window.location.href = `https://isbndb.com/book/${isbn}`;
+        }
+        else {
+            alert('This is not a valid ISBN number, please try again!');
+        }
+		return false;
+    }
 
 	function isValidISBN(inStr) {
 	    let sum, digit, check;
